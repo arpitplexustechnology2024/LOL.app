@@ -8,9 +8,10 @@
 import UIKit
 
 class PrivacyPolicyViewController: UIViewController {
-
+    
     @IBOutlet weak var doneButton: UIButton!
     @IBOutlet weak var backButton: UIButton!
+    @IBOutlet weak var privacyPolicyTextView: UITextView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -18,13 +19,14 @@ class PrivacyPolicyViewController: UIViewController {
     }
     
     func setupUI() {
+        self.privacyPolicyTextView.text = privacyPolicyTextSet().privacyPolicyText
         // Done Button Gradient Color
-        doneButton.layer.cornerRadius = doneButton.frame.height / 2
-        applyGradientToButton(doneButton)
+        self.doneButton.layer.cornerRadius = doneButton.frame.height / 2
+        self.applyGradientToButton(doneButton)
         if traitCollection.userInterfaceStyle == .dark {
-            backButton.setImage(UIImage(named: "BackIcon_Dark"), for: .normal)
+            self.backButton.setImage(UIImage(named: "BackIcon_Dark"), for: .normal)
         } else {
-            backButton.setImage(UIImage(named: "BackIcon_Light"), for: .normal)
+            self.backButton.setImage(UIImage(named: "BackIcon_Light"), for: .normal)
         }
     }
     

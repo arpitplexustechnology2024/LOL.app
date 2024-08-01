@@ -47,6 +47,7 @@
 		BD2398AB2C5AF0F300D91363 /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD2398AA2C5AF0F300D91363 /* Model.swift */; };
 		BD2398AE2C5AF12C00D91363 /* UserExitsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD2398AD2C5AF12C00D91363 /* UserExitsViewModel.swift */; };
 		BD2398B12C5AF15800D91363 /* UserExitsAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD2398B02C5AF15800D91363 /* UserExitsAPI.swift */; };
+		BDFAE4ED2C5BF26E0014D3BE /* PrivacyPolicyText.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDFAE4EC2C5BF26E0014D3BE /* PrivacyPolicyText.swift */; };
 		F6CFAD2056903F322AA72CD4 /* Pods_LOL_LOLUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BC1088F62F1DD694E87E3090 /* Pods_LOL_LOLUITests.framework */; };
 /* End PBXBuildFile section */
 
@@ -117,6 +118,7 @@
 		BD2398AA2C5AF0F300D91363 /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
 		BD2398AD2C5AF12C00D91363 /* UserExitsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserExitsViewModel.swift; sourceTree = "<group>"; };
 		BD2398B02C5AF15800D91363 /* UserExitsAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserExitsAPI.swift; sourceTree = "<group>"; };
+		BDFAE4EC2C5BF26E0014D3BE /* PrivacyPolicyText.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PrivacyPolicyText.swift; sourceTree = "<group>"; };
 		C5F847D90B53701B98649D59 /* Pods-LOL.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LOL.debug.xcconfig"; path = "Target Support Files/Pods-LOL/Pods-LOL.debug.xcconfig"; sourceTree = "<group>"; };
 		C82BD36CD871BAECFDFF3592 /* Pods-LOL-LOLUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LOL-LOLUITests.release.xcconfig"; path = "Target Support Files/Pods-LOL-LOLUITests/Pods-LOL-LOLUITests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -277,6 +279,7 @@
 				BD2398772C5A9EE100D91363 /* Extension.swift */,
 				BD2398782C5A9EE100D91363 /* Switch.swift */,
 				BD2398792C5A9EE100D91363 /* UIImage+Gif.swift */,
+				BDFAE4EC2C5BF26E0014D3BE /* PrivacyPolicyText.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -587,6 +590,7 @@
 				BD2398A22C5ACFF200D91363 /* PrivacyPolicyViewController.swift in Sources */,
 				BD23987E2C5A9EE100D91363 /* Switch.swift in Sources */,
 				BD2398A02C5ABCBD00D91363 /* SignupViewController.swift in Sources */,
+				BDFAE4ED2C5BF26E0014D3BE /* PrivacyPolicyText.swift in Sources */,
 				BD23987B2C5A9EE100D91363 /* CustomSegment.swift in Sources */,
 				BD23987F2C5A9EE100D91363 /* UIImage+Gif.swift in Sources */,
 				BD2398AB2C5AF0F300D91363 /* Model.swift in Sources */,

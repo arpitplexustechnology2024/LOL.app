@@ -42,9 +42,9 @@ class LaunchViewController: UIViewController {
     }
     
     func setupLoadingView() {
-        loadingView.contentMode = .scaleAspectFit
-        loadingView.loopMode = .loop
-        loadingView.play()
+        self.loadingView.contentMode = .scaleAspectFit
+        self.loadingView.loopMode = .loop
+        self.loadingView.play()
         
         Timer.scheduledTimer(withTimeInterval: 2.5, repeats: false) { Time in
             

@@ -26,33 +26,34 @@ class ProfileViewController: UIViewController, UITextFieldDelegate {
     
     func setupUI() {
         // Avtar Image View
-        AvtarImageview.layer.cornerRadius = AvtarImageview.frame.height / 2
-        AvtarImageview.layer.borderWidth = 10
-        AvtarImageview.layer.borderColor = UIColor.customWhite.cgColor
-        AvtarImageview.isUserInteractionEnabled = true
+        self.AvtarImageview.layer.cornerRadius = AvtarImageview.frame.height / 2
+        self.AvtarImageview.layer.borderWidth = 10
+        self.AvtarImageview.layer.borderColor = UIColor.customWhite.cgColor
+        self.AvtarImageview.isUserInteractionEnabled = true
         let tapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(selectAvtarTapped(_:)))
         AvtarImageview.addGestureRecognizer(tapGestureRecognizer)
         
         // Let's Go button Gradient Color
-        letsgoButton.frame = CGRect(x: (view.frame.width - 398) / 2, y: view.center.y - 25, width: 398, height: 50)
-        letsgoButton.layer.cornerRadius = letsgoButton.frame.height / 2
-        applyGradientToButton(letsgoButton)
+        self.letsgoButton.frame = CGRect(x: (view.frame.width - 398) / 2, y: view.center.y - 25, width: 398, height: 50)
+        self.letsgoButton.layer.cornerRadius = letsgoButton.frame.height / 2
+        self.applyGradientToButton(letsgoButton)
         
-        errorLabel.isHidden = true
+        self.errorLabel.isHidden = true
+        self.errorLabel.alpha = 0
         // Name TextField
         self.nameTextfiled.returnKeyType = .done
         self.nameTextfiled.delegate = self
         self.hideKeyboardTappedAround()
         if traitCollection.userInterfaceStyle == .dark {
-            nameTextfiled.layer.borderWidth = 1.5
-            nameTextfiled.layer.cornerRadius = 5
-            nameTextfiled.layer.borderColor = UIColor.white.cgColor
-            backButton.setImage(UIImage(named: "BackIcon_Dark"), for: .normal)
+            self.nameTextfiled.layer.borderWidth = 1.5
+            self.nameTextfiled.layer.cornerRadius = 5
+            self.nameTextfiled.layer.borderColor = UIColor.white.cgColor
+            self.backButton.setImage(UIImage(named: "BackIcon_Dark"), for: .normal)
         } else {
-            nameTextfiled.layer.borderWidth = 1.5
-            nameTextfiled.layer.cornerRadius = 5
-            nameTextfiled.layer.borderColor = UIColor.black.cgColor
-            backButton.setImage(UIImage(named: "BackIcon_Light"), for: .normal)
+            self.nameTextfiled.layer.borderWidth = 1.5
+            self.nameTextfiled.layer.cornerRadius = 5
+            self.nameTextfiled.layer.borderColor = UIColor.black.cgColor
+            self.backButton.setImage(UIImage(named: "BackIcon_Light"), for: .normal)
         }
     }
     
@@ -78,15 +79,22 @@ class ProfileViewController: UIViewController, UITextFieldDelegate {
     }
     
     @IBAction func btnLetsgoTapped(_ sender: UIButton) {
-        errorLabel.isHidden = true
+        self.errorLabel.isHidden = true
         guard let text = nameTextfiled.text, !text.isEmpty else {
-            errorLabel.text = "* Name is required"
-            errorLabel.isHidden = false
+            showError(message: "* Name is required")
             return
         }
         
         let vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(identifier: "LanguageViewController")
         self.navigationController?.pushViewController(vc, animated: true)
+    }
+    
+    func showError(message: String) {
+        self.errorLabel.text = message
+        self.errorLabel.isHidden = false
+        UIView.animate(withDuration: 0.3, animations: {
+            self.errorLabel.alpha = 1
+        })
     }
     
     @IBAction func btnBackTapped(_ sender: UIButton) {

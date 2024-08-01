@@ -7,6 +7,8 @@
 
 import UIKit
 import Lottie
+import TTGSnackbar
+import Alamofire
 
 class SignupViewController: UIViewController {
     
@@ -20,41 +22,60 @@ class SignupViewController: UIViewController {
     @IBOutlet weak var customSwitchContainer: UIView!
     private var customSwitch: CustomSwitch!
     private var isCheckboxChecked: Bool = false
+    private var userNameViewModel: UserNameViewModel!
+    private var activityIndicator: UIActivityIndicatorView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         setupUI()
         setupPrivacyPolicyLabel()
         setupCustomSwitch()
+        
+        let apiService = APIService()
+        self.userNameViewModel = UserNameViewModel(apiService: apiService)
+        self.userNameViewModel.bindViewModelToController = {
+            self.updateErrorLabel()
+        }
+        self.userNameViewModel.successCallback = {
+            self.navigateToProfilePage()
+        }
     }
     
     func setupUI() {
         // Lottie Animation
-        MaskView.contentMode = .scaleAspectFit
-        MaskView.loopMode = .loop
-        MaskView.play()
+        self.MaskView.contentMode = .scaleAspectFit
+        self.MaskView.loopMode = .loop
+        self.MaskView.play()
+        
+        // Activity Indicator Setup
+        self.activityIndicator = UIActivityIndicatorView(style: .medium)
+        self.activityIndicator.color = .white
+        self.activityIndicator.translatesAutoresizingMaskIntoConstraints = false
+        self.activityIndicator.hidesWhenStopped = true
+        self.nextButton.addSubview(activityIndicator)
+        
+        NSLayoutConstraint.activate([
+            activityIndicator.centerXAnchor.constraint(equalTo: nextButton.centerXAnchor),
+            activityIndicator.centerYAnchor.constraint(equalTo: nextButton.centerYAnchor)
+        ])
         
         // Next button Gradient Color
-        nextButton.layer.cornerRadius = nextButton.frame.height / 2
-        nextButton.frame = CGRect(x: (view.frame.width - 398) / 2, y: view.center.y - 25, width: 398, height: 50)
-        applyGradientToButton(nextButton)
+        self.nextButton.layer.cornerRadius = nextButton.frame.height / 2
+        self.nextButton.frame = CGRect(x: (view.frame.width - 398) / 2, y: view.center.y - 25, width: 398, height: 50)
+        self.applyGradientToButton(nextButton)
         
-        errorLabel.isHidden = true
+        self.errorLabel.isHidden = true
+        self.errorLabel.alpha = 0
         // User Name TextField
         self.userNameTextFiled.delegate = self
         self.userNameTextFiled.returnKeyType = .done
+        self.userNameTextFiled.layer.borderWidth = 1.5
+        self.userNameTextFiled.layer.cornerRadius = 5
+        self.userNameTextFiled.layer.borderColor = UIColor.textfieldBoader.cgColor
         self.hideKeyboardTappedAround()
-        if traitCollection.userInterfaceStyle == .dark {
-            userNameTextFiled.layer.borderWidth = 1.5
-            userNameTextFiled.layer.cornerRadius = 5
-            userNameTextFiled.layer.borderColor = UIColor.white.cgColor
-            privacyPolicyCheckBox.setImage(UIImage(named: "Checkbox.Dark"), for: .normal)
-        } else {
-            userNameTextFiled.layer.borderWidth = 1.5
-            userNameTextFiled.layer.cornerRadius = 5
-            userNameTextFiled.layer.borderColor = UIColor.black.cgColor
-            privacyPolicyCheckBox.setImage(UIImage(named: "Checkbox.Light"), for: .normal)
-        }
+        
+        self.privacyPolicyCheckBox.setImage(UIImage(named: "Checkbox"), for: .normal)
+        
     }
     
     func applyGradientToButton(_ button: UIButton) {
@@ -85,42 +106,27 @@ class SignupViewController: UIViewController {
     
     @IBAction func privacyPolicyCheckBoxTapped(_ sender: UIButton) {
         isCheckboxChecked.toggle()
-        if traitCollection.userInterfaceStyle == .dark {
             if isCheckboxChecked {
                 privacyPolicyCheckBox.setImage(UIImage(named: "Checkbox.Fill"), for: .normal)
             } else {
-                privacyPolicyCheckBox.setImage(UIImage(named: "Checkbox.Dark"), for: .normal)
+                privacyPolicyCheckBox.setImage(UIImage(named: "Checkbox"), for: .normal)
             }
-        } else {
-            if isCheckboxChecked {
-                privacyPolicyCheckBox.setImage(UIImage(named: "Checkbox.Fill"), for: .normal)
-            } else {
-                privacyPolicyCheckBox.setImage(UIImage(named: "Checkbox.Light"), for: .normal)
-            }
-        }
-        privacyPolicyCheckBox.layer.borderColor = UIColor.clear.cgColor
-        privacyPolicyCheckBox.layer.borderWidth = 0
     }
     
     @IBAction func btnNextTapped(_ sender: UIButton) {
-        errorLabel.isHidden = true
-        privacyPolicyCheckBox.layer.borderColor = UIColor.clear.cgColor
-        privacyPolicyCheckBox.layer.borderWidth = 0
+        self.errorLabel.isHidden = true
         var hasError = false
         
         // Remove "@" from the username if it exists
         let username = userNameTextFiled.text?.trimmingCharacters(in: .whitespacesAndNewlines).replacingOccurrences(of: "@", with: "") ?? ""
         
         if userNameTextFiled.text?.isEmpty ?? true || userNameTextFiled.text == "@" {
-            errorLabel.text = "* Username is required"
-            errorLabel.isHidden = false
+            showError(message: "* Username is required")
             hasError = true
         }
         
         if !isCheckboxChecked {
-            privacyPolicyCheckBox.layer.borderColor = UIColor.red.cgColor
-            privacyPolicyCheckBox.layer.borderWidth = 1
-            privacyPolicyCheckBox.layer.cornerRadius = 2
+            privacyPolicyCheckBox.setImage(UIImage(named: "Checkbox.Error"), for: .normal)
             hasError = true
         }
         
@@ -128,12 +134,59 @@ class SignupViewController: UIViewController {
             return
         }
         
+        if !isConnectedToInternet() {
+            self.showNoInternetSnackbar()
+            return
+        }
+        
+        self.startLoading()
+        self.userNameViewModel.checkUsername(username: username)
+        
         UserDefaults.standard.set(username, forKey: "username")
         print("Username: \(username)")
         
-        let vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(identifier: "ProfileViewController")
-        self.navigationController?.pushViewController(vc, animated: true)
-        
+    }
+    
+    func showError(message: String) {
+        self.errorLabel.text = message
+        self.errorLabel.isHidden = false
+        UIView.animate(withDuration: 0.3, animations: {
+            self.errorLabel.alpha = 1
+        })
+    }
+    
+    func updateErrorLabel() {
+        DispatchQueue.main.async {
+            self.showError(message: self.userNameViewModel.errorMessage!)
+            self.stopLoading()
+        }
+    }
+    
+    func navigateToProfilePage() {
+        DispatchQueue.main.async {
+            self.stopLoading()
+            let vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(identifier: "ProfileViewController")
+            self.navigationController?.pushViewController(vc, animated: true)
+        }
+    }
+    
+    func startLoading() {
+        self.nextButton.setTitle("", for: .normal)
+        self.activityIndicator.startAnimating()
+    }
+    
+    func stopLoading() {
+        self.activityIndicator.stopAnimating()
+        self.nextButton.setTitle("Next", for: .normal)
+    }
+    
+    func showNoInternetSnackbar() {
+        let snackbar = TTGSnackbar(message: "No Internet Connection. Please check your internet connection and try again.", duration: .middle)
+        snackbar.show()
+    }
+    
+    func isConnectedToInternet() -> Bool {
+        return NetworkReachabilityManager()?.isReachable ?? false
     }
     
     func setupPrivacyPolicyLabel() {
@@ -145,9 +198,9 @@ class SignupViewController: UIViewController {
         attributedString.addAttribute(.underlineStyle, value: NSUnderlineStyle.single.rawValue, range: privacyPolicyRange)
         
         let tapGesture = UITapGestureRecognizer(target: self, action: #selector(tapLabel(gesture:)))
-        privacyPolicyLabel.addGestureRecognizer(tapGesture)
-        privacyPolicyLabel.isUserInteractionEnabled = true
-        privacyPolicyLabel.attributedText = attributedString
+        self.privacyPolicyLabel.addGestureRecognizer(tapGesture)
+        self.privacyPolicyLabel.isUserInteractionEnabled = true
+        self.privacyPolicyLabel.attributedText = attributedString
     }
     
     @objc func tapLabel(gesture: UITapGestureRecognizer) {
@@ -155,7 +208,7 @@ class SignupViewController: UIViewController {
         let privacyPolicyRange = text.range(of: "Privacy Policy")
         
         if gesture.didTapAttributedTextInLabel(label: privacyPolicyLabel, inRange: privacyPolicyRange) {
-            navigateToPrivacyPolicy()
+            self.navigateToPrivacyPolicy()
         }
     }
     
