@@ -6,3 +6,14 @@
 //
 
 import Foundation
+
+// MARK: - Welcome
+struct userNameResponse: Codable {
+    let userNameStatus: Bool
+    let message: String
+
+    enum CodingKeys: String, CodingKey {
+        case userNameStatus = "UserNameStatus"
+        case message
+    }
+}

@@ -7,9 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		69A4FE097F6278C7F7959406 /* Pods_LOLTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5B496ADF187064B8157E36E6 /* Pods_LOLTests.framework */; };
+		98AD00549B4954E68BDAB63E /* Pods_LOL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8BB75A1BE5FF01F5EFF18A16 /* Pods_LOL.framework */; };
 		BD2398392C5A9B7D00D91363 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD2398382C5A9B7D00D91363 /* AppDelegate.swift */; };
 		BD23983B2C5A9B7D00D91363 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD23983A2C5A9B7D00D91363 /* SceneDelegate.swift */; };
-		BD23983D2C5A9B7D00D91363 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD23983C2C5A9B7D00D91363 /* ViewController.swift */; };
 		BD2398402C5A9B7D00D91363 /* Base in Resources */ = {isa = PBXBuildFile; fileRef = BD23983F2C5A9B7D00D91363 /* Base */; };
 		BD2398432C5A9B7D00D91363 /* LOL.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = BD2398412C5A9B7D00D91363 /* LOL.xcdatamodeld */; };
 		BD2398452C5A9B7E00D91363 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BD2398442C5A9B7E00D91363 /* Assets.xcassets */; };
@@ -17,6 +18,36 @@
 		BD2398532C5A9B7E00D91363 /* LOLTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD2398522C5A9B7E00D91363 /* LOLTests.swift */; };
 		BD23985D2C5A9B7E00D91363 /* LOLUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD23985C2C5A9B7E00D91363 /* LOLUITests.swift */; };
 		BD23985F2C5A9B7E00D91363 /* LOLUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD23985E2C5A9B7E00D91363 /* LOLUITestsLaunchTests.swift */; };
+		BD23986F2C5A9E2C00D91363 /* LaunchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD23986E2C5A9E2C00D91363 /* LaunchViewController.swift */; };
+		BD2398732C5A9EA100D91363 /* Loading.json in Resources */ = {isa = PBXBuildFile; fileRef = BD2398702C5A9EA100D91363 /* Loading.json */; };
+		BD2398742C5A9EA100D91363 /* Mask.json in Resources */ = {isa = PBXBuildFile; fileRef = BD2398712C5A9EA100D91363 /* Mask.json */; };
+		BD23987B2C5A9EE100D91363 /* CustomSegment.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD2398752C5A9EE100D91363 /* CustomSegment.swift */; };
+		BD23987C2C5A9EE100D91363 /* CustomTabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD2398762C5A9EE100D91363 /* CustomTabBar.swift */; };
+		BD23987D2C5A9EE100D91363 /* Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD2398772C5A9EE100D91363 /* Extension.swift */; };
+		BD23987E2C5A9EE100D91363 /* Switch.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD2398782C5A9EE100D91363 /* Switch.swift */; };
+		BD23987F2C5A9EE100D91363 /* UIImage+Gif.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD2398792C5A9EE100D91363 /* UIImage+Gif.swift */; };
+		BD23988F2C5A9EE900D91363 /* BunnyFunny.ttf in Resources */ = {isa = PBXBuildFile; fileRef = BD2398802C5A9EE900D91363 /* BunnyFunny.ttf */; };
+		BD2398902C5A9EE900D91363 /* CCKillJoy Italic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = BD2398812C5A9EE900D91363 /* CCKillJoy Italic.ttf */; };
+		BD2398912C5A9EE900D91363 /* Helvetica Rounded Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = BD2398822C5A9EE900D91363 /* Helvetica Rounded Bold.otf */; };
+		BD2398922C5A9EE900D91363 /* HelveticaRoundedLTStd-Bd.ttf in Resources */ = {isa = PBXBuildFile; fileRef = BD2398832C5A9EE900D91363 /* HelveticaRoundedLTStd-Bd.ttf */; };
+		BD2398932C5A9EE900D91363 /* Lato-Black.ttf in Resources */ = {isa = PBXBuildFile; fileRef = BD2398842C5A9EE900D91363 /* Lato-Black.ttf */; };
+		BD2398942C5A9EE900D91363 /* Lato-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = BD2398852C5A9EE900D91363 /* Lato-Bold.ttf */; };
+		BD2398952C5A9EE900D91363 /* Lato-ExtraBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = BD2398862C5A9EE900D91363 /* Lato-ExtraBold.ttf */; };
+		BD2398962C5A9EE900D91363 /* Lato-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = BD2398872C5A9EE900D91363 /* Lato-Light.ttf */; };
+		BD2398972C5A9EE900D91363 /* Lato-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = BD2398882C5A9EE900D91363 /* Lato-Medium.ttf */; };
+		BD2398982C5A9EE900D91363 /* Lato-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = BD2398892C5A9EE900D91363 /* Lato-Regular.ttf */; };
+		BD2398992C5A9EE900D91363 /* Lato-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = BD23988A2C5A9EE900D91363 /* Lato-SemiBold.ttf */; };
+		BD23989A2C5A9EE900D91363 /* Pure Joy.ttf in Resources */ = {isa = PBXBuildFile; fileRef = BD23988B2C5A9EE900D91363 /* Pure Joy.ttf */; };
+		BD23989B2C5A9EE900D91363 /* SHOWG.TTF in Resources */ = {isa = PBXBuildFile; fileRef = BD23988C2C5A9EE900D91363 /* SHOWG.TTF */; };
+		BD23989C2C5A9EE900D91363 /* Spider Monkey_PersonalUseOnly.ttf in Resources */ = {isa = PBXBuildFile; fileRef = BD23988D2C5A9EE900D91363 /* Spider Monkey_PersonalUseOnly.ttf */; };
+		BD23989E2C5A9F6C00D91363 /* Color.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BD23989D2C5A9F6C00D91363 /* Color.xcassets */; };
+		BD2398A02C5ABCBD00D91363 /* SignupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD23989F2C5ABCBD00D91363 /* SignupViewController.swift */; };
+		BD2398A22C5ACFF200D91363 /* PrivacyPolicyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD2398A12C5ACFF200D91363 /* PrivacyPolicyViewController.swift */; };
+		BD2398A42C5AE25800D91363 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD2398A32C5AE25800D91363 /* ProfileViewController.swift */; };
+		BD2398AB2C5AF0F300D91363 /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD2398AA2C5AF0F300D91363 /* Model.swift */; };
+		BD2398AE2C5AF12C00D91363 /* UserExitsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD2398AD2C5AF12C00D91363 /* UserExitsViewModel.swift */; };
+		BD2398B12C5AF15800D91363 /* UserExitsAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD2398B02C5AF15800D91363 /* UserExitsAPI.swift */; };
+		F6CFAD2056903F322AA72CD4 /* Pods_LOL_LOLUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BC1088F62F1DD694E87E3090 /* Pods_LOL_LOLUITests.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -37,10 +68,16 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		22BB5E0EA14CF9CD29C375A6 /* Pods-LOLTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LOLTests.release.xcconfig"; path = "Target Support Files/Pods-LOLTests/Pods-LOLTests.release.xcconfig"; sourceTree = "<group>"; };
+		3C28A08FB74386F04BB970F9 /* Pods-LOL-LOLUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LOL-LOLUITests.debug.xcconfig"; path = "Target Support Files/Pods-LOL-LOLUITests/Pods-LOL-LOLUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		5627F7CCCFA4266DD01DF79C /* Pods-LOL.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LOL.release.xcconfig"; path = "Target Support Files/Pods-LOL/Pods-LOL.release.xcconfig"; sourceTree = "<group>"; };
+		5B496ADF187064B8157E36E6 /* Pods_LOLTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_LOLTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		77CEB0366D0BBA413EA1387C /* Pods-LOLTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LOLTests.debug.xcconfig"; path = "Target Support Files/Pods-LOLTests/Pods-LOLTests.debug.xcconfig"; sourceTree = "<group>"; };
+		8BB75A1BE5FF01F5EFF18A16 /* Pods_LOL.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_LOL.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		BC1088F62F1DD694E87E3090 /* Pods_LOL_LOLUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_LOL_LOLUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		BD2398352C5A9B7D00D91363 /* LOL.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LOL.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BD2398382C5A9B7D00D91363 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BD23983A2C5A9B7D00D91363 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		BD23983C2C5A9B7D00D91363 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		BD23983F2C5A9B7D00D91363 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		BD2398422C5A9B7D00D91363 /* LOL.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = LOL.xcdatamodel; sourceTree = "<group>"; };
 		BD2398442C5A9B7E00D91363 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -51,6 +88,37 @@
 		BD2398582C5A9B7E00D91363 /* LOLUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LOLUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		BD23985C2C5A9B7E00D91363 /* LOLUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LOLUITests.swift; sourceTree = "<group>"; };
 		BD23985E2C5A9B7E00D91363 /* LOLUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LOLUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		BD23986E2C5A9E2C00D91363 /* LaunchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchViewController.swift; sourceTree = "<group>"; };
+		BD2398702C5A9EA100D91363 /* Loading.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Loading.json; sourceTree = "<group>"; };
+		BD2398712C5A9EA100D91363 /* Mask.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Mask.json; sourceTree = "<group>"; };
+		BD2398752C5A9EE100D91363 /* CustomSegment.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomSegment.swift; sourceTree = "<group>"; };
+		BD2398762C5A9EE100D91363 /* CustomTabBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomTabBar.swift; sourceTree = "<group>"; };
+		BD2398772C5A9EE100D91363 /* Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extension.swift; sourceTree = "<group>"; };
+		BD2398782C5A9EE100D91363 /* Switch.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Switch.swift; sourceTree = "<group>"; };
+		BD2398792C5A9EE100D91363 /* UIImage+Gif.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImage+Gif.swift"; sourceTree = "<group>"; };
+		BD2398802C5A9EE900D91363 /* BunnyFunny.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = BunnyFunny.ttf; sourceTree = "<group>"; };
+		BD2398812C5A9EE900D91363 /* CCKillJoy Italic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "CCKillJoy Italic.ttf"; sourceTree = "<group>"; };
+		BD2398822C5A9EE900D91363 /* Helvetica Rounded Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Helvetica Rounded Bold.otf"; sourceTree = "<group>"; };
+		BD2398832C5A9EE900D91363 /* HelveticaRoundedLTStd-Bd.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "HelveticaRoundedLTStd-Bd.ttf"; sourceTree = "<group>"; };
+		BD2398842C5A9EE900D91363 /* Lato-Black.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Lato-Black.ttf"; sourceTree = "<group>"; };
+		BD2398852C5A9EE900D91363 /* Lato-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Lato-Bold.ttf"; sourceTree = "<group>"; };
+		BD2398862C5A9EE900D91363 /* Lato-ExtraBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Lato-ExtraBold.ttf"; sourceTree = "<group>"; };
+		BD2398872C5A9EE900D91363 /* Lato-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Lato-Light.ttf"; sourceTree = "<group>"; };
+		BD2398882C5A9EE900D91363 /* Lato-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Lato-Medium.ttf"; sourceTree = "<group>"; };
+		BD2398892C5A9EE900D91363 /* Lato-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Lato-Regular.ttf"; sourceTree = "<group>"; };
+		BD23988A2C5A9EE900D91363 /* Lato-SemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Lato-SemiBold.ttf"; sourceTree = "<group>"; };
+		BD23988B2C5A9EE900D91363 /* Pure Joy.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pure Joy.ttf"; sourceTree = "<group>"; };
+		BD23988C2C5A9EE900D91363 /* SHOWG.TTF */ = {isa = PBXFileReference; lastKnownFileType = file; path = SHOWG.TTF; sourceTree = "<group>"; };
+		BD23988D2C5A9EE900D91363 /* Spider Monkey_PersonalUseOnly.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Spider Monkey_PersonalUseOnly.ttf"; sourceTree = "<group>"; };
+		BD23989D2C5A9F6C00D91363 /* Color.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Color.xcassets; sourceTree = "<group>"; };
+		BD23989F2C5ABCBD00D91363 /* SignupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupViewController.swift; sourceTree = "<group>"; };
+		BD2398A12C5ACFF200D91363 /* PrivacyPolicyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrivacyPolicyViewController.swift; sourceTree = "<group>"; };
+		BD2398A32C5AE25800D91363 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
+		BD2398AA2C5AF0F300D91363 /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
+		BD2398AD2C5AF12C00D91363 /* UserExitsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserExitsViewModel.swift; sourceTree = "<group>"; };
+		BD2398B02C5AF15800D91363 /* UserExitsAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserExitsAPI.swift; sourceTree = "<group>"; };
+		C5F847D90B53701B98649D59 /* Pods-LOL.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LOL.debug.xcconfig"; path = "Target Support Files/Pods-LOL/Pods-LOL.debug.xcconfig"; sourceTree = "<group>"; };
+		C82BD36CD871BAECFDFF3592 /* Pods-LOL-LOLUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LOL-LOLUITests.release.xcconfig"; path = "Target Support Files/Pods-LOL-LOLUITests/Pods-LOL-LOLUITests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +126,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				98AD00549B4954E68BDAB63E /* Pods_LOL.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -65,6 +134,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				69A4FE097F6278C7F7959406 /* Pods_LOLTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -72,12 +142,36 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F6CFAD2056903F322AA72CD4 /* Pods_LOL_LOLUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		39EEBACF33B2EFFBF0B01C54 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				C5F847D90B53701B98649D59 /* Pods-LOL.debug.xcconfig */,
+				5627F7CCCFA4266DD01DF79C /* Pods-LOL.release.xcconfig */,
+				3C28A08FB74386F04BB970F9 /* Pods-LOL-LOLUITests.debug.xcconfig */,
+				C82BD36CD871BAECFDFF3592 /* Pods-LOL-LOLUITests.release.xcconfig */,
+				77CEB0366D0BBA413EA1387C /* Pods-LOLTests.debug.xcconfig */,
+				22BB5E0EA14CF9CD29C375A6 /* Pods-LOLTests.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		9F6FA9E664BFC91A6AAA9C4B /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				8BB75A1BE5FF01F5EFF18A16 /* Pods_LOL.framework */,
+				BC1088F62F1DD694E87E3090 /* Pods_LOL_LOLUITests.framework */,
+				5B496ADF187064B8157E36E6 /* Pods_LOLTests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		BD23982C2C5A9B7C00D91363 = {
 			isa = PBXGroup;
 			children = (
@@ -85,6 +179,8 @@
 				BD2398512C5A9B7E00D91363 /* LOLTests */,
 				BD23985B2C5A9B7E00D91363 /* LOLUITests */,
 				BD2398362C5A9B7D00D91363 /* Products */,
+				39EEBACF33B2EFFBF0B01C54 /* Pods */,
+				9F6FA9E664BFC91A6AAA9C4B /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -101,12 +197,17 @@
 		BD2398372C5A9B7D00D91363 /* LOL */ = {
 			isa = PBXGroup;
 			children = (
-				BD2398382C5A9B7D00D91363 /* AppDelegate.swift */,
-				BD23983A2C5A9B7D00D91363 /* SceneDelegate.swift */,
-				BD23983C2C5A9B7D00D91363 /* ViewController.swift */,
-				BD23983E2C5A9B7D00D91363 /* Main.storyboard */,
+				BD23986B2C5A9BF200D91363 /* Delegate */,
+				BD2398722C5A9EA100D91363 /* LottieJson */,
+				BD23988E2C5A9EE900D91363 /* Lato Font */,
+				BD23987A2C5A9EE100D91363 /* Extension */,
+				BD2398A92C5AF0E700D91363 /* Model */,
+				BD2398AF2C5AF13B00D91363 /* API Manager */,
+				BD2398AC2C5AF10600D91363 /* View Model */,
+				BD23986D2C5A9C0900D91363 /* View */,
+				BD23986C2C5A9C0000D91363 /* Controller */,
 				BD2398442C5A9B7E00D91363 /* Assets.xcassets */,
-				BD2398462C5A9B7E00D91363 /* LaunchScreen.storyboard */,
+				BD23989D2C5A9F6C00D91363 /* Color.xcassets */,
 				BD2398492C5A9B7E00D91363 /* Info.plist */,
 				BD2398412C5A9B7D00D91363 /* LOL.xcdatamodeld */,
 			);
@@ -130,6 +231,101 @@
 			path = LOLUITests;
 			sourceTree = "<group>";
 		};
+		BD23986B2C5A9BF200D91363 /* Delegate */ = {
+			isa = PBXGroup;
+			children = (
+				BD2398382C5A9B7D00D91363 /* AppDelegate.swift */,
+				BD23983A2C5A9B7D00D91363 /* SceneDelegate.swift */,
+			);
+			path = Delegate;
+			sourceTree = "<group>";
+		};
+		BD23986C2C5A9C0000D91363 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				BD23986E2C5A9E2C00D91363 /* LaunchViewController.swift */,
+				BD23989F2C5ABCBD00D91363 /* SignupViewController.swift */,
+				BD2398A12C5ACFF200D91363 /* PrivacyPolicyViewController.swift */,
+				BD2398A32C5AE25800D91363 /* ProfileViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		BD23986D2C5A9C0900D91363 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				BD23983E2C5A9B7D00D91363 /* Main.storyboard */,
+				BD2398462C5A9B7E00D91363 /* LaunchScreen.storyboard */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		BD2398722C5A9EA100D91363 /* LottieJson */ = {
+			isa = PBXGroup;
+			children = (
+				BD2398702C5A9EA100D91363 /* Loading.json */,
+				BD2398712C5A9EA100D91363 /* Mask.json */,
+			);
+			path = LottieJson;
+			sourceTree = "<group>";
+		};
+		BD23987A2C5A9EE100D91363 /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				BD2398752C5A9EE100D91363 /* CustomSegment.swift */,
+				BD2398762C5A9EE100D91363 /* CustomTabBar.swift */,
+				BD2398772C5A9EE100D91363 /* Extension.swift */,
+				BD2398782C5A9EE100D91363 /* Switch.swift */,
+				BD2398792C5A9EE100D91363 /* UIImage+Gif.swift */,
+			);
+			path = Extension;
+			sourceTree = "<group>";
+		};
+		BD23988E2C5A9EE900D91363 /* Lato Font */ = {
+			isa = PBXGroup;
+			children = (
+				BD2398802C5A9EE900D91363 /* BunnyFunny.ttf */,
+				BD2398812C5A9EE900D91363 /* CCKillJoy Italic.ttf */,
+				BD2398822C5A9EE900D91363 /* Helvetica Rounded Bold.otf */,
+				BD2398832C5A9EE900D91363 /* HelveticaRoundedLTStd-Bd.ttf */,
+				BD2398842C5A9EE900D91363 /* Lato-Black.ttf */,
+				BD2398852C5A9EE900D91363 /* Lato-Bold.ttf */,
+				BD2398862C5A9EE900D91363 /* Lato-ExtraBold.ttf */,
+				BD2398872C5A9EE900D91363 /* Lato-Light.ttf */,
+				BD2398882C5A9EE900D91363 /* Lato-Medium.ttf */,
+				BD2398892C5A9EE900D91363 /* Lato-Regular.ttf */,
+				BD23988A2C5A9EE900D91363 /* Lato-SemiBold.ttf */,
+				BD23988B2C5A9EE900D91363 /* Pure Joy.ttf */,
+				BD23988C2C5A9EE900D91363 /* SHOWG.TTF */,
+				BD23988D2C5A9EE900D91363 /* Spider Monkey_PersonalUseOnly.ttf */,
+			);
+			path = "Lato Font";
+			sourceTree = "<group>";
+		};
+		BD2398A92C5AF0E700D91363 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				BD2398AA2C5AF0F300D91363 /* Model.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		BD2398AC2C5AF10600D91363 /* View Model */ = {
+			isa = PBXGroup;
+			children = (
+				BD2398AD2C5AF12C00D91363 /* UserExitsViewModel.swift */,
+			);
+			path = "View Model";
+			sourceTree = "<group>";
+		};
+		BD2398AF2C5AF13B00D91363 /* API Manager */ = {
+			isa = PBXGroup;
+			children = (
+				BD2398B02C5AF15800D91363 /* UserExitsAPI.swift */,
+			);
+			path = "API Manager";
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -137,9 +333,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = BD2398622C5A9B7E00D91363 /* Build configuration list for PBXNativeTarget "LOL" */;
 			buildPhases = (
+				E2564252E880FA19FEE512A8 /* [CP] Check Pods Manifest.lock */,
 				BD2398312C5A9B7C00D91363 /* Sources */,
 				BD2398322C5A9B7C00D91363 /* Frameworks */,
 				BD2398332C5A9B7C00D91363 /* Resources */,
+				6C011978CA107C81228B29E1 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -154,6 +352,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = BD2398652C5A9B7E00D91363 /* Build configuration list for PBXNativeTarget "LOLTests" */;
 			buildPhases = (
+				48C6CA6B3D97F3B9D871BD7E /* [CP] Check Pods Manifest.lock */,
 				BD23984A2C5A9B7E00D91363 /* Sources */,
 				BD23984B2C5A9B7E00D91363 /* Frameworks */,
 				BD23984C2C5A9B7E00D91363 /* Resources */,
@@ -172,9 +371,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = BD2398682C5A9B7E00D91363 /* Build configuration list for PBXNativeTarget "LOLUITests" */;
 			buildPhases = (
+				F33704ADCEE822DED6598483 /* [CP] Check Pods Manifest.lock */,
 				BD2398542C5A9B7E00D91363 /* Sources */,
 				BD2398552C5A9B7E00D91363 /* Frameworks */,
 				BD2398562C5A9B7E00D91363 /* Resources */,
+				2D82FDFEC59C9E84E1CECFB0 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -234,8 +435,25 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BD2398952C5A9EE900D91363 /* Lato-ExtraBold.ttf in Resources */,
+				BD2398962C5A9EE900D91363 /* Lato-Light.ttf in Resources */,
+				BD2398942C5A9EE900D91363 /* Lato-Bold.ttf in Resources */,
+				BD23989C2C5A9EE900D91363 /* Spider Monkey_PersonalUseOnly.ttf in Resources */,
+				BD23989A2C5A9EE900D91363 /* Pure Joy.ttf in Resources */,
+				BD2398912C5A9EE900D91363 /* Helvetica Rounded Bold.otf in Resources */,
+				BD2398922C5A9EE900D91363 /* HelveticaRoundedLTStd-Bd.ttf in Resources */,
+				BD2398972C5A9EE900D91363 /* Lato-Medium.ttf in Resources */,
+				BD23988F2C5A9EE900D91363 /* BunnyFunny.ttf in Resources */,
+				BD2398982C5A9EE900D91363 /* Lato-Regular.ttf in Resources */,
+				BD2398902C5A9EE900D91363 /* CCKillJoy Italic.ttf in Resources */,
+				BD2398992C5A9EE900D91363 /* Lato-SemiBold.ttf in Resources */,
 				BD2398452C5A9B7E00D91363 /* Assets.xcassets in Resources */,
 				BD2398482C5A9B7E00D91363 /* Base in Resources */,
+				BD2398742C5A9EA100D91363 /* Mask.json in Resources */,
+				BD2398732C5A9EA100D91363 /* Loading.json in Resources */,
+				BD23989B2C5A9EE900D91363 /* SHOWG.TTF in Resources */,
+				BD23989E2C5A9F6C00D91363 /* Color.xcassets in Resources */,
+				BD2398932C5A9EE900D91363 /* Lato-Black.ttf in Resources */,
 				BD2398402C5A9B7D00D91363 /* Base in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -256,15 +474,129 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		2D82FDFEC59C9E84E1CECFB0 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-LOL-LOLUITests/Pods-LOL-LOLUITests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-LOL-LOLUITests/Pods-LOL-LOLUITests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-LOL-LOLUITests/Pods-LOL-LOLUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		48C6CA6B3D97F3B9D871BD7E /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-LOLTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		6C011978CA107C81228B29E1 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-LOL/Pods-LOL-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-LOL/Pods-LOL-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-LOL/Pods-LOL-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		E2564252E880FA19FEE512A8 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-LOL-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		F33704ADCEE822DED6598483 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-LOL-LOLUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		BD2398312C5A9B7C00D91363 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BD23983D2C5A9B7D00D91363 /* ViewController.swift in Sources */,
 				BD2398392C5A9B7D00D91363 /* AppDelegate.swift in Sources */,
+				BD2398AE2C5AF12C00D91363 /* UserExitsViewModel.swift in Sources */,
+				BD2398A22C5ACFF200D91363 /* PrivacyPolicyViewController.swift in Sources */,
+				BD23987E2C5A9EE100D91363 /* Switch.swift in Sources */,
+				BD2398A02C5ABCBD00D91363 /* SignupViewController.swift in Sources */,
+				BD23987B2C5A9EE100D91363 /* CustomSegment.swift in Sources */,
+				BD23987F2C5A9EE100D91363 /* UIImage+Gif.swift in Sources */,
+				BD2398AB2C5AF0F300D91363 /* Model.swift in Sources */,
+				BD2398A42C5AE25800D91363 /* ProfileViewController.swift in Sources */,
+				BD23987D2C5A9EE100D91363 /* Extension.swift in Sources */,
 				BD23983B2C5A9B7D00D91363 /* SceneDelegate.swift in Sources */,
 				BD2398432C5A9B7D00D91363 /* LOL.xcdatamodeld in Sources */,
+				BD2398B12C5AF15800D91363 /* UserExitsAPI.swift in Sources */,
+				BD23987C2C5A9EE100D91363 /* CustomTabBar.swift in Sources */,
+				BD23986F2C5A9E2C00D91363 /* LaunchViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -372,7 +704,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 17.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
@@ -429,7 +761,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 17.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
@@ -441,12 +773,14 @@
 		};
 		BD2398632C5A9B7E00D91363 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = C5F847D90B53701B98649D59 /* Pods-LOL.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = CVRPLSH3AP;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = LOL/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -454,6 +788,7 @@
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -469,12 +804,14 @@
 		};
 		BD2398642C5A9B7E00D91363 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5627F7CCCFA4266DD01DF79C /* Pods-LOL.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = CVRPLSH3AP;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = LOL/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -482,6 +819,7 @@
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -497,6 +835,7 @@
 		};
 		BD2398662C5A9B7E00D91363 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 77CEB0366D0BBA413EA1387C /* Pods-LOLTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -504,7 +843,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = CVRPLSH3AP;
 				GENERATE_INFOPLIST_FILE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 17.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.plexustechnology.LOLTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -517,6 +856,7 @@
 		};
 		BD2398672C5A9B7E00D91363 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 22BB5E0EA14CF9CD29C375A6 /* Pods-LOLTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -524,7 +864,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = CVRPLSH3AP;
 				GENERATE_INFOPLIST_FILE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 17.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.plexustechnology.LOLTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -537,12 +877,14 @@
 		};
 		BD2398692C5A9B7E00D91363 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3C28A08FB74386F04BB970F9 /* Pods-LOL-LOLUITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = CVRPLSH3AP;
 				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.plexustechnology.LOLUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -555,12 +897,14 @@
 		};
 		BD23986A2C5A9B7E00D91363 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = C82BD36CD871BAECFDFF3592 /* Pods-LOL-LOLUITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = CVRPLSH3AP;
 				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.plexustechnology.LOLUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";

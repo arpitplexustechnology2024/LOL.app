@@ -1,0 +1,24 @@
+PODS:
+  - Alamofire (5.9.1)
+  - lottie-ios (4.4.3)
+  - TTGSnackbar (1.12.0)
+
+DEPENDENCIES:
+  - Alamofire
+  - lottie-ios
+  - TTGSnackbar
+
+SPEC REPOS:
+  trunk:
+    - Alamofire
+    - lottie-ios
+    - TTGSnackbar
+
+SPEC CHECKSUMS:
+  Alamofire: f36a35757af4587d8e4f4bfa223ad10be2422b8c
+  lottie-ios: fcb5e73e17ba4c983140b7d21095c834b3087418
+  TTGSnackbar: 8e7650b9b1f5f44e40228473455986f5c12213c7
+
+PODFILE CHECKSUM: 8a0c63750ca1fe8fc30d5286fc346c19a4bffae7
+
+COCOAPODS: 1.15.2
