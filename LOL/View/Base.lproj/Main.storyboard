@@ -381,8 +381,8 @@ ZCB0aGUDAwMgUHJpdmFjeSBQb2xpY3k
                                     <constraint firstAttribute="height" constant="177" id="SSA-xZ-p9v"/>
                                 </constraints>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="* Username is required" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5Nk-L2-V01">
-                                <rect key="frame" x="28.000000000000007" y="461.66666666666669" width="119.66666666666669" height="14.666666666666686"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="* Name is required" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5Nk-L2-V01">
+                                <rect key="frame" x="28.000000000000007" y="461.66666666666669" width="97.666666666666686" height="15"/>
                                 <fontDescription key="fontDescription" name="Lato-Regular" family="Lato" pointSize="12"/>
                                 <color key="textColor" red="1" green="0.028078071959999999" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
@@ -411,6 +411,7 @@ ZCB0aGUDAwMgUHJpdmFjeSBQb2xpY3k
                     </view>
                     <connections>
                         <outlet property="AvtarImageview" destination="fKC-wh-uNa" id="LCV-1Y-zSX"/>
+                        <outlet property="Label" destination="w9u-Kq-bcf" id="hJ7-xr-aDT"/>
                         <outlet property="backButton" destination="8Fl-Vi-jeE" id="Hxh-Pt-53d"/>
                         <outlet property="errorLabel" destination="5Nk-L2-V01" id="R0t-Le-K8M"/>
                         <outlet property="letsgoButton" destination="YtC-3I-22V" id="ue6-s7-nvf"/>

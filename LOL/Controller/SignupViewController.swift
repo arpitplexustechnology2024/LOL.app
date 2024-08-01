@@ -108,6 +108,9 @@ class SignupViewController: UIViewController {
         privacyPolicyCheckBox.layer.borderWidth = 0
         var hasError = false
         
+        // Remove "@" from the username if it exists
+        let username = userNameTextFiled.text?.trimmingCharacters(in: .whitespacesAndNewlines).replacingOccurrences(of: "@", with: "") ?? ""
+        
         if userNameTextFiled.text?.isEmpty ?? true || userNameTextFiled.text == "@" {
             errorLabel.text = "* Username is required"
             errorLabel.isHidden = false
@@ -124,6 +127,9 @@ class SignupViewController: UIViewController {
         if hasError {
             return
         }
+        
+        UserDefaults.standard.set(username, forKey: "username")
+        print("Username: \(username)")
         
         let vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(identifier: "ProfileViewController")
         self.navigationController?.pushViewController(vc, animated: true)

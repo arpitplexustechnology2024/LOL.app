@@ -12,12 +12,16 @@ class ProfileViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var AvtarImageview: UIImageView!
     @IBOutlet weak var nameTextfiled: UITextField!
     @IBOutlet weak var errorLabel: UILabel!
+    @IBOutlet weak var Label: UILabel!
     @IBOutlet weak var letsgoButton: UIButton!
     @IBOutlet weak var backButton: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         setupUI()
+        if let username = UserDefaults.standard.string(forKey: "username") {
+            Label.text = "Select \(username) avatar"
+        }
     }
     
     func setupUI() {
@@ -80,7 +84,7 @@ class ProfileViewController: UIViewController, UITextFieldDelegate {
             errorLabel.isHidden = false
             return
         }
-    
+        
         let vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(identifier: "LanguageViewController")
         self.navigationController?.pushViewController(vc, animated: true)
     }
