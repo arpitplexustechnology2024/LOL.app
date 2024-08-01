@@ -36,6 +36,7 @@ class ProfileViewController: UIViewController, UITextFieldDelegate {
         
         errorLabel.isHidden = true
         // Name TextField
+        self.nameTextfiled.returnKeyType = .done
         self.nameTextfiled.delegate = self
         self.hideKeyboardTappedAround()
         if traitCollection.userInterfaceStyle == .dark {
