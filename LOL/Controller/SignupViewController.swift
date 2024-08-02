@@ -24,6 +24,9 @@ class SignupViewController: UIViewController {
     private var isCheckboxChecked: Bool = false
     private var userNameViewModel: UserNameViewModel!
     private var activityIndicator: UIActivityIndicatorView!
+    private var loadingOverlay: UIView!
+    @IBOutlet weak var privacyPolicyTopConstraint: NSLayoutConstraint!
+    @IBOutlet weak var checkboxTopConstraint: NSLayoutConstraint!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -59,6 +62,12 @@ class SignupViewController: UIViewController {
             activityIndicator.centerYAnchor.constraint(equalTo: nextButton.centerYAnchor)
         ])
         
+        // Loading Overlay Setup
+        self.loadingOverlay = UIView(frame: self.view.bounds)
+        self.loadingOverlay.backgroundColor = UIColor(white: 0, alpha: 0)
+        self.loadingOverlay.isHidden = true
+        self.view.addSubview(loadingOverlay)
+        
         // Next button Gradient Color
         self.nextButton.layer.cornerRadius = nextButton.frame.height / 2
         self.nextButton.frame = CGRect(x: (view.frame.width - 398) / 2, y: view.center.y - 25, width: 398, height: 50)
@@ -76,7 +85,29 @@ class SignupViewController: UIViewController {
         
         self.privacyPolicyCheckBox.setImage(UIImage(named: "Checkbox"), for: .normal)
         
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow(notification: )), name: UIResponder.keyboardWillShowNotification, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide), name: UIResponder.keyboardWillHideNotification, object: nil)
+        
     }
+    
+    @objc private func keyboardWillShow(notification: NSNotification) {
+        if let keyboardFrame: NSValue = notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue {
+            let keyboardHight = keyboardFrame.cgRectValue.height
+            let bottomSpace = self.view.frame.height - (userNameTextFiled.frame.origin.y + userNameTextFiled.frame.height)
+            self.view.frame.origin.y -= keyboardHight - bottomSpace + 54
+        }
+        
+    }
+    
+    @objc private func keyboardWillHide() {
+        self.view.frame.origin.y = 0
+    }
+    
+    deinit {
+        NotificationCenter.default.removeObserver(self, name: UIResponder.keyboardWillShowNotification, object: nil)
+        NotificationCenter.default.removeObserver(self, name: UIResponder.keyboardWillHideNotification, object: nil)
+    }
+    
     
     func applyGradientToButton(_ button: UIButton) {
         let gradientLayer = CAGradientLayer()
@@ -106,31 +137,31 @@ class SignupViewController: UIViewController {
     
     @IBAction func privacyPolicyCheckBoxTapped(_ sender: UIButton) {
         isCheckboxChecked.toggle()
-            if isCheckboxChecked {
-                privacyPolicyCheckBox.setImage(UIImage(named: "Checkbox.Fill"), for: .normal)
-            } else {
-                privacyPolicyCheckBox.setImage(UIImage(named: "Checkbox"), for: .normal)
-            }
+        if isCheckboxChecked {
+            privacyPolicyCheckBox.setImage(UIImage(named: "Checkbox.Fill"), for: .normal)
+        } else {
+            privacyPolicyCheckBox.setImage(UIImage(named: "Checkbox"), for: .normal)
+        }
     }
     
     @IBAction func btnNextTapped(_ sender: UIButton) {
         self.errorLabel.isHidden = true
-        var hasError = false
+        UIView.animate(withDuration: 0.3, animations: {
+            self.errorLabel.alpha = 1
+            self.privacyPolicyTopConstraint.constant = 13
+            self.checkboxTopConstraint.constant = 20
+            self.view.layoutIfNeeded()
+        })
         
-        // Remove "@" from the username if it exists
         let username = userNameTextFiled.text?.trimmingCharacters(in: .whitespacesAndNewlines).replacingOccurrences(of: "@", with: "") ?? ""
         
-        if userNameTextFiled.text?.isEmpty ?? true || userNameTextFiled.text == "@" {
+        guard !username.isEmpty else {
             showError(message: "* Username is required")
-            hasError = true
+            return
         }
         
         if !isCheckboxChecked {
             privacyPolicyCheckBox.setImage(UIImage(named: "Checkbox.Error"), for: .normal)
-            hasError = true
-        }
-        
-        if hasError {
             return
         }
         
@@ -144,7 +175,6 @@ class SignupViewController: UIViewController {
         
         UserDefaults.standard.set(username, forKey: "username")
         print("Username: \(username)")
-        
     }
     
     func showError(message: String) {
@@ -152,6 +182,9 @@ class SignupViewController: UIViewController {
         self.errorLabel.isHidden = false
         UIView.animate(withDuration: 0.3, animations: {
             self.errorLabel.alpha = 1
+            self.privacyPolicyTopConstraint.constant = 20
+            self.checkboxTopConstraint.constant = 27
+            self.view.layoutIfNeeded()
         })
     }
     
@@ -173,15 +206,17 @@ class SignupViewController: UIViewController {
     func startLoading() {
         self.nextButton.setTitle("", for: .normal)
         self.activityIndicator.startAnimating()
+        self.loadingOverlay.isHidden = false
     }
     
     func stopLoading() {
         self.activityIndicator.stopAnimating()
         self.nextButton.setTitle("Next", for: .normal)
+        self.loadingOverlay.isHidden = true
     }
     
     func showNoInternetSnackbar() {
-        let snackbar = TTGSnackbar(message: "No Internet Connection. Please check your internet connection and try again.", duration: .middle)
+        let snackbar = TTGSnackbar(message: "Please turn on Internet connection.", duration: .middle)
         snackbar.show()
     }
     
@@ -196,6 +231,7 @@ class SignupViewController: UIViewController {
         let attributedString = NSMutableAttributedString(string: text)
         attributedString.addAttribute(.foregroundColor, value: UIColor.red, range: privacyPolicyRange)
         attributedString.addAttribute(.underlineStyle, value: NSUnderlineStyle.single.rawValue, range: privacyPolicyRange)
+        attributedString.addAttribute(.font, value: UIFont(name: "Lato-SemiBold", size: 15)!, range: privacyPolicyRange)
         
         let tapGesture = UITapGestureRecognizer(target: self, action: #selector(tapLabel(gesture:)))
         self.privacyPolicyLabel.addGestureRecognizer(tapGesture)
