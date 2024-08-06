@@ -7,6 +7,7 @@
 
 import UIKit
 
+@available(iOS 15.0, *)
 class ProfileViewController: UIViewController, UITextFieldDelegate {
     
     @IBOutlet weak var AvtarImageview: UIImageView!
@@ -15,6 +16,8 @@ class ProfileViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var Label: UILabel!
     @IBOutlet weak var letsgoButton: UIButton!
     @IBOutlet weak var backButton: UIButton!
+    
+    private var selectedIndexPath: IndexPath?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -27,8 +30,6 @@ class ProfileViewController: UIViewController, UITextFieldDelegate {
     func setupUI() {
         // Avtar Image View
         self.AvtarImageview.layer.cornerRadius = AvtarImageview.frame.height / 2
-        self.AvtarImageview.layer.borderWidth = 10
-        self.AvtarImageview.layer.borderColor = UIColor.customWhite.cgColor
         self.AvtarImageview.isUserInteractionEnabled = true
         let tapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(selectAvtarTapped(_:)))
         AvtarImageview.addGestureRecognizer(tapGestureRecognizer)
@@ -58,7 +59,24 @@ class ProfileViewController: UIViewController, UITextFieldDelegate {
     }
     
     @objc func selectAvtarTapped(_ sender: UITapGestureRecognizer){
-        print("Avtar Tapped")
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let bottomSheetVC = storyboard.instantiateViewController(withIdentifier: "AvtarBottomViewController") as! AvtarBottomViewController
+        
+        bottomSheetVC.onAvatarSelected = { [weak self] avatarURL in
+            DispatchQueue.global(qos: .background).async {
+                if let url = URL(string: avatarURL), let data = try? Data(contentsOf: url) {
+                    DispatchQueue.main.async {
+                        self?.AvtarImageview.image = UIImage(data: data)
+                    }
+                }
+            }
+        }
+        
+        if let sheet = bottomSheetVC.sheetPresentationController {
+            sheet.detents = [.medium()]
+            sheet.prefersGrabberVisible = true
+        }
+        present(bottomSheetVC, animated: true, completion: nil)
     }
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
@@ -80,13 +98,16 @@ class ProfileViewController: UIViewController, UITextFieldDelegate {
     
     @IBAction func btnLetsgoTapped(_ sender: UIButton) {
         self.errorLabel.isHidden = true
-        guard let text = nameTextfiled.text, !text.isEmpty else {
+        guard let name = nameTextfiled.text, !name.isEmpty else {
             showError(message: "* Name is required")
             return
         }
         
-       // let vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(identifier: "LanguageViewController")
-       // self.navigationController?.pushViewController(vc, animated: true)
+        UserDefaults.standard.set(name, forKey: "name")
+        print("Name : \(name)")
+        
+        let vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(identifier: "LanguageViewController") as! LanguageViewController
+        self.navigationController?.pushViewController(vc, animated: true)
     }
     
     func showError(message: String) {

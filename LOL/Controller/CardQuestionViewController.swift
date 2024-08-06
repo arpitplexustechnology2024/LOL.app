@@ -2,7 +2,7 @@
 //  CardQuestionViewController.swift
 //  LOL
 //
-//  Created by Arpit iOS Dev. on 22/07/24.
+//  Created by Arpit iOS Dev. on 05/08/24.
 //
 
 import UIKit
@@ -103,15 +103,15 @@ class CardQuestionViewController: UIViewController {
         }
     }
     
-    @IBAction func btnShareTapped(_ sender: UIButton) {
-        if let bottomSheetVC = storyboard?.instantiateViewController(withIdentifier: "ShareViewController") as? ShareViewController {
-            if let sheet = bottomSheetVC.sheetPresentationController {
-                sheet.detents = [.medium()]
-                sheet.prefersGrabberVisible = true
-            }
-            present(bottomSheetVC, animated: true, completion: nil)
-        }
-    }
+//    @IBAction func btnShareTapped(_ sender: UIButton) {
+//        if let bottomSheetVC = storyboard?.instantiateViewController(withIdentifier: "ShareViewController") as? ShareViewController {
+//            if let sheet = bottomSheetVC.sheetPresentationController {
+//                sheet.detents = [.medium()]
+//                sheet.prefersGrabberVisible = true
+//            }
+//            present(bottomSheetVC, animated: true, completion: nil)
+//        }
+//    }
     
     @IBAction func btnBackTapped(_ sender: UIButton) {
         self.navigationController?.popViewController(animated: true)
@@ -138,7 +138,7 @@ class CardQuestionViewController: UIViewController {
         return spacing
     }
 }
-
+                                                                                   
 private extension UIView {
     func applyGradient(colors: [CGColor]) {
         let gradientLayer = CAGradientLayer()

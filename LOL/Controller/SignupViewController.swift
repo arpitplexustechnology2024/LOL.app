@@ -20,13 +20,13 @@ class SignupViewController: UIViewController {
     @IBOutlet weak var privacyPolicyCheckBox: UIButton!
     @IBOutlet weak var nextButton: UIButton!
     @IBOutlet weak var customSwitchContainer: UIView!
+    @IBOutlet weak var privacyPolicyTopConstraint: NSLayoutConstraint!
+    @IBOutlet weak var checkboxTopConstraint: NSLayoutConstraint!
     private var customSwitch: CustomSwitch!
     private var isCheckboxChecked: Bool = false
     private var userNameViewModel: UserNameViewModel!
     private var activityIndicator: UIActivityIndicatorView!
     private var loadingOverlay: UIView!
-    @IBOutlet weak var privacyPolicyTopConstraint: NSLayoutConstraint!
-    @IBOutlet weak var checkboxTopConstraint: NSLayoutConstraint!
     
     override func viewDidLoad() {
         super.viewDidLoad()

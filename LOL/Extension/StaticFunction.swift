@@ -6,3 +6,8 @@
 //
 
 import Foundation
+import UIKit
+
+class LanguageSet {
+    static var languageSelected = "selectedLanguage"
+}

@@ -5,3 +5,58 @@
   Created by Arpit iOS Dev. on 05/08/24.
   
 */
+
+// Tab bar Item
+"TabbarItemKey01" = "Home";
+"TabbarItemKey02" = "Inbox";
+"TabbarItemKey03" = "Form screen";
+"TabbarItemKey04" = "More App";
+"TabbarItemKey05" = "Settings";
+
+// Edit View Controller
+"EditDescriptionKey" = "Select the questions from the card to know about yourself when other person open your link. you can edit your question... ";
+"EditNameKey" = "Name";
+"EditSelectQuesKey" = "Select a five question";
+"EditSaveCardBtnKey" = "Save Card";
+
+// More App View Controller
+"MoreTitleKey" = "COMING SOON";
+"MoreDescriptionKey" = "We are going to launch our app very soon stay tune";
+
+// Setting View Controller
+"SettingPart01Key" = "GENERAL";
+"NotificationKey" = "Notification";
+"PremiumKey" = "Premium";
+"LanguageKey" = "Language setup";
+"LanguageSetKey" = "English";
+"SettingPart02Key" = "COMMUNITY";
+"ReviewKey" = "Write a app review";
+"InstagramKey" = "Follow us on instagram";
+"ShareAppKey" = "Share app with a friend";
+"SettingPart03Key" = "SUPPORT";
+"HelpKey" = "I need Help";
+"PrivacyPolicyKey" = "Privacy Policy";
+"DeleteAccountKey" = "Delete account";
+
+// Delete View
+"DeleteTitleKey" = "Delete account";
+"DeleteDescriptionKey" = "Once you delete this account after you can not restore account.";
+"CancelBtnKey" = "Cancel";
+"DeleteBtnKey" = "Delete";
+
+// Card Question
+"CardQuesKey" = "Card Question";
+"CardDescriptionKey" = "Select the questions from the card to know about yourself when other person open your link. you can edit your question...";
+"FiveQuesKey" = "Five Question";
+"EditQuesBtnKey" = "Edit question";
+"ShareBtnKey" = "Share!";
+
+// Premium View Controller
+"UnlockBtnKey" = "Unlock";
+"PremiumFeaturesKey" = "👉pro features for $100.00 lifetime👈";
+"PremiumTitleKey01" = "Reveal Sender Profile";
+"PremiumTitleKey02" = "Viewers Hints";
+"PremiumTitleKey03" = "Edit Card Questions";
+"PremiumDescriptionKey01" = "Get hints like their image, location, device, lol id and more...";
+"PremiumDescriptionKey02" = "Get some funny hint who creates your funny card?";
+"PremiumDescriptionKey03" = "You can edit the card's questions when you ask questions to create a card!";
