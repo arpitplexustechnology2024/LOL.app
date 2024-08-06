@@ -6,6 +6,8 @@
 //
 
 import UIKit
+import TTGSnackbar
+import SDWebImage
 
 @available(iOS 15.0, *)
 class ProfileViewController: UIViewController, UITextFieldDelegate {
@@ -63,13 +65,7 @@ class ProfileViewController: UIViewController, UITextFieldDelegate {
         let bottomSheetVC = storyboard.instantiateViewController(withIdentifier: "AvtarBottomViewController") as! AvtarBottomViewController
         
         bottomSheetVC.onAvatarSelected = { [weak self] avatarURL in
-            DispatchQueue.global(qos: .background).async {
-                if let url = URL(string: avatarURL), let data = try? Data(contentsOf: url) {
-                    DispatchQueue.main.async {
-                        self?.AvtarImageview.image = UIImage(data: data)
-                    }
-                }
-            }
+            self?.AvtarImageview.sd_setImage(with: URL(string: avatarURL), placeholderImage: UIImage(named: "placeholder"))
         }
         
         if let sheet = bottomSheetVC.sheetPresentationController {

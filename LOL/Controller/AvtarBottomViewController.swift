@@ -113,19 +113,19 @@ extension AvtarBottomViewController: UICollectionViewDelegate, UICollectionViewD
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        if let previousIndexPath = selectedIndexPath, let previousCell = collectionView.cellForItem(at: previousIndexPath) as? AvatarCollectionViewCell {
-            previousCell.setSelected(false)
+        if let previousIndexPath = selectedIndexPath {
+            let previousCell = collectionView.cellForItem(at: previousIndexPath) as? AvatarCollectionViewCell
+            previousCell?.setSelected(false)
         }
-            
-        let selectedAvatar = viewModel.avatars[indexPath.item]
-        let cell = collectionView.cellForItem(at: indexPath) as? AvatarCollectionViewCell
-        cell?.setSelected(true)
         
+        let cell = collectionView.cellForItem(at: indexPath) as! AvatarCollectionViewCell
+        cell.setSelected(true)
         selectedIndexPath = indexPath
         
-        print("Selected Avatar URL: \(selectedAvatar.avatarURL)")
-        onAvatarSelected?(selectedAvatar.avatarURL)
-       // dismiss(animated: true, completion: nil)
+        let selectedAvatarURL = viewModel.avatars[indexPath.item].avatarURL
+        onAvatarSelected?(selectedAvatarURL)
+        
+        dismiss(animated: true, completion: nil)
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
