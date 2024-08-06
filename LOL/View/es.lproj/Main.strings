@@ -1,0 +1,270 @@
+
+/* Class = "UIButton"; normalTitle = "Share!"; ObjectID = "0KD-ub-kja"; */
+"0KD-ub-kja.normalTitle" = "Share!";
+
+/* Class = "UILabel"; text = "GENERAL"; ObjectID = "0sN-eN-DIR"; */
+"0sN-eN-DIR.text" = "GENERAL";
+
+/* Class = "UILabel"; text = "(Ex: @kylie_jenner)"; ObjectID = "2bB-jK-U5E"; */
+"2bB-jK-U5E.text" = "(Ex: @kylie_jenner)";
+
+/* Class = "UILabel"; text = "Delete account"; ObjectID = "2bu-6i-R7d"; */
+"2bu-6i-R7d.text" = "Delete account";
+
+/* Class = "UILabel"; text = "LOL.LINK/abc.sh12"; ObjectID = "2no-48-6Q4"; */
+"2no-48-6Q4.text" = "LOL.LINK/abc.sh12";
+
+/* Class = "UILabel"; text = "Nick Name       :"; ObjectID = "2sN-8l-OPa"; */
+"2sN-8l-OPa.text" = "Nick Name       :";
+
+/* Class = "UILabel"; text = "Worst memory ?"; ObjectID = "3Po-9S-l0W"; */
+"3Po-9S-l0W.text" = "Worst memory ?";
+
+/* Class = "UIButton"; configuration.title = "Share!"; ObjectID = "3QD-dg-lv6"; */
+"3QD-dg-lv6.configuration.title" = "Share!";
+
+/* Class = "UILabel"; text = "English"; ObjectID = "3dD-ZA-Jbf"; */
+"3dD-ZA-Jbf.text" = "English";
+
+/* Class = "UILabel"; text = "Select the questions from the card to know\n about yourself when other person open your link. you can edit your question..."; ObjectID = "3qs-6F-vnB"; */
+"3qs-6F-vnB.text" = "Select the questions from the card to know\n about yourself when other person open your link. you can edit your question...";
+
+/* Class = "UILabel"; text = "My Secret        :"; ObjectID = "4sk-vA-LXW"; */
+"4sk-vA-LXW.text" = "My Secret        :";
+
+/* Class = "UIButton"; configuration.title = "Share your card!"; ObjectID = "4vM-z5-Go1"; */
+"4vM-z5-Go1.configuration.title" = "Share your card!";
+
+/* Class = "UIButton"; normalTitle = "Unlock"; ObjectID = "4vM-z5-Go1"; */
+"4vM-z5-Go1.normalTitle" = "Unlock";
+
+/* Class = "UILabel"; text = "Notification"; ObjectID = "5AW-D6-ugT"; */
+"5AW-D6-ugT.text" = "Notification";
+
+/* Class = "UILabel"; text = "* Name is required"; ObjectID = "5Nk-L2-V01"; */
+"5Nk-L2-V01.text" = "* Name is required";
+
+/* Class = "UILabel"; text = "Write a app review"; ObjectID = "679-tY-ZwR"; */
+"679-tY-ZwR.text" = "Write a app review";
+
+/* Class = "UILabel"; text = "Spoil my hair"; ObjectID = "6F8-rw-baM"; */
+"6F8-rw-baM.text" = "Spoil my hair";
+
+/* Class = "UITextField"; placeholder = " @user name"; ObjectID = "6yi-xw-08t"; */
+"6yi-xw-08t.placeholder" = " @user name";
+
+/* Class = "UILabel"; text = "Once you delete this account \nafter you can not restore account."; ObjectID = "7IN-5Y-cbh"; */
+"7IN-5Y-cbh.text" = "Once you delete this account \nafter you can not restore account.";
+
+/* Class = "UILabel"; text = "Choose Language"; ObjectID = "7Tc-Ai-pUB"; */
+"7Tc-Ai-pUB.text" = "Choose Language";
+
+/* Class = "UILabel"; text = "Select the questions from the card to know\n about yourself when other person open your link. you can edit your question..."; ObjectID = "8rW-uC-mVu"; */
+"8rW-uC-mVu.text" = "Select the questions from the card to know\n about yourself when other person open your link. you can edit your question...";
+
+/* Class = "UIButton"; normalTitle = "Save Card"; ObjectID = "9Wn-0G-a0p"; */
+"9Wn-0G-a0p.normalTitle" = "Save Card";
+
+/* Class = "UILabel"; text = "Chandu"; ObjectID = "AjF-IV-6m5"; */
+"AjF-IV-6m5.text" = "Chandu";
+
+/* Class = "UITextField"; placeholder = "Name"; ObjectID = "Ef8-4X-TmP"; */
+"Ef8-4X-TmP.placeholder" = "Name";
+
+/* Class = "UILabel"; text = "Profile"; ObjectID = "EmG-KF-mhl"; */
+"EmG-KF-mhl.text" = "Profile";
+
+/* Class = "UILabel"; text = "Step 2 : Share Link on your \ninsagram story"; ObjectID = "ErI-Ki-M1e"; */
+"ErI-Ki-M1e.text" = "Step 2 : Share Link on your \ninsagram story";
+
+/* Class = "UILabel"; text = "More App"; ObjectID = "FCJ-ol-857"; */
+"FCJ-ol-857.text" = "More App";
+
+/* Class = "UILabel"; text = "Follow us on instagram"; ObjectID = "Fct-y7-c1E"; */
+"Fct-y7-c1E.text" = "Follow us on instagram";
+
+/* Class = "UISegmentedControl"; G07-Kv-I2u.segmentTitles[0] = "First"; ObjectID = "G07-Kv-I2u"; */
+"G07-Kv-I2u.segmentTitles[0]" = "First";
+
+/* Class = "UISegmentedControl"; G07-Kv-I2u.segmentTitles[1] = "Second"; ObjectID = "G07-Kv-I2u"; */
+"G07-Kv-I2u.segmentTitles[1]" = "Second";
+
+/* Class = "UILabel"; text = "Delete account"; ObjectID = "GcC-o1-zk9"; */
+"GcC-o1-zk9.text" = "Delete account";
+
+/* Class = "UILabel"; text = "Scooter Stunts"; ObjectID = "HzH-eG-C7e"; */
+"HzH-eG-C7e.text" = "Scooter Stunts";
+
+/* Class = "UILabel"; text = "Weird talent ?"; ObjectID = "IKD-eh-ttc"; */
+"IKD-eh-ttc.text" = "Weird talent ?";
+
+/* Class = "UIButton"; configuration.title = "Show Profile"; ObjectID = "ISm-c9-76w"; */
+"ISm-c9-76w.configuration.title" = "Show Profile";
+
+/* Class = "UIButton"; normalTitle = "Unlock"; ObjectID = "ISm-c9-76w"; */
+"ISm-c9-76w.normalTitle" = "Unlock";
+
+/* Class = "UILabel"; text = "By tapping “Continue”, you acknowledge that you have read the Privacy Policy"; ObjectID = "IZ9-xn-M5R"; */
+"IZ9-xn-M5R.text" = "By tapping “Continue”, you acknowledge that you have read the Privacy Policy";
+
+/* Class = "UIButton"; normalTitle = "Next"; ObjectID = "KpT-90-3c6"; */
+"KpT-90-3c6.normalTitle" = "Next";
+
+/* Class = "UILabel"; text = "Select a language and prepare \nfor a laugh attack!"; ObjectID = "LZV-JF-eOo"; */
+"LZV-JF-eOo.text" = "Select a language and prepare \nfor a laugh attack!";
+
+/* Class = "UILabel"; text = "Inbox"; ObjectID = "MP8-yz-HBO"; */
+"MP8-yz-HBO.text" = "Inbox";
+
+/* Class = "UILabel"; text = "Privacy Policy"; ObjectID = "MZt-Wj-GRa"; */
+"MZt-Wj-GRa.text" = "Privacy Policy";
+
+/* Class = "UILabel"; text = "Sign up"; ObjectID = "N2a-ng-1C8"; */
+"N2a-ng-1C8.text" = "Sign up";
+
+/* Class = "UIButton"; configuration.title = "Edit question"; ObjectID = "NTg-Dw-Nfn"; */
+"NTg-Dw-Nfn.configuration.title" = "Edit question";
+
+/* Class = "UILabel"; text = "Select a five question "; ObjectID = "OGW-fF-VY2"; */
+"OGW-fF-VY2.text" = "Select a five question ";
+
+/* Class = "UIButton"; normalTitle = "Delete"; ObjectID = "OHx-up-Z47"; */
+"OHx-up-Z47.normalTitle" = "Delete";
+
+/* Class = "UILabel"; text = "My Secret        :"; ObjectID = "Oz3-sa-Jea"; */
+"Oz3-sa-Jea.text" = "My Secret        :";
+
+/* Class = "UILabel"; text = "Five Question"; ObjectID = "P2F-pt-w1g"; */
+"P2F-pt-w1g.text" = "Five Question";
+
+/* Class = "UIButton"; configuration.title = "Unlock"; ObjectID = "TBY-mI-0I8"; */
+"TBY-mI-0I8.configuration.title" = "Unlock";
+
+/* Class = "UIButton"; normalTitle = "Unlock"; ObjectID = "TBY-mI-0I8"; */
+"TBY-mI-0I8.normalTitle" = "Unlock";
+
+/* Class = "UILabel"; text = "Hobby              :"; ObjectID = "TfG-lS-vhm"; */
+"TfG-lS-vhm.text" = "Hobby              :";
+
+/* Class = "UILabel"; text = "Avtar"; ObjectID = "Um3-zC-hU4"; */
+"Um3-zC-hU4.text" = "Avtar";
+
+/* Class = "UILabel"; text = "Home"; ObjectID = "VlH-0H-UX9"; */
+"VlH-0H-UX9.text" = "Home";
+
+/* Class = "UILabel"; text = "Worst Memory :"; ObjectID = "Vua-eX-MXc"; */
+"Vua-eX-MXc.text" = "Worst Memory :";
+
+/* Class = "UILabel"; text = "My Hobby ?"; ObjectID = "Xnd-Tm-gbf"; */
+"Xnd-Tm-gbf.text" = "My Hobby ?";
+
+/* Class = "UIButton"; normalTitle = "Next"; ObjectID = "YIa-AM-7bi"; */
+"YIa-AM-7bi.normalTitle" = "Next";
+
+/* Class = "UIButton"; normalTitle = "Let’s go"; ObjectID = "YtC-3I-22V"; */
+"YtC-3I-22V.normalTitle" = "Let’s go";
+
+/* Class = "UILabel"; text = "3."; ObjectID = "aJ9-My-XLG"; */
+"aJ9-My-XLG.text" = "3.";
+
+/* Class = "UILabel"; text = "1."; ObjectID = "bBR-yY-Dp7"; */
+"bBR-yY-Dp7.text" = "1.";
+
+/* Class = "UILabel"; text = "Preview "; ObjectID = "bax-Q4-3oz"; */
+"bax-Q4-3oz.text" = "Preview ";
+
+/* Class = "UILabel"; text = "SUPPORT"; ObjectID = "cQ1-1y-w8d"; */
+"cQ1-1y-w8d.text" = "SUPPORT";
+
+/* Class = "UILabel"; text = "Language setup"; ObjectID = "erl-2Z-NBY"; */
+"erl-2Z-NBY.text" = "Language setup";
+
+/* Class = "UILabel"; text = "5."; ObjectID = "eyy-7p-f4W"; */
+"eyy-7p-f4W.text" = "5.";
+
+/* Class = "UILabel"; text = "4."; ObjectID = "g7f-W1-SbL"; */
+"g7f-W1-SbL.text" = "4.";
+
+/* Class = "UILabel"; text = "2."; ObjectID = "gBc-LS-Xr3"; */
+"gBc-LS-Xr3.text" = "2.";
+
+/* Class = "UILabel"; text = "JADIYO"; ObjectID = "gCN-YD-Nzo"; */
+"gCN-YD-Nzo.text" = "JADIYO";
+
+/* Class = "UILabel"; text = "Name"; ObjectID = "gO9-Wj-h2l"; */
+"gO9-Wj-h2l.text" = "Name";
+
+/* Class = "UILabel"; text = "Privacy Policy"; ObjectID = "ie5-Cb-AhQ"; */
+"ie5-Cb-AhQ.text" = "Privacy Policy";
+
+/* Class = "UILabel"; text = " Edit Card Questions"; ObjectID = "jMq-KD-FMV"; */
+"jMq-KD-FMV.text" = " Edit Card Questions";
+
+/* Class = "UILabel"; text = "Language"; ObjectID = "kOx-iw-SgX"; */
+"kOx-iw-SgX.text" = "Language";
+
+/* Class = "UITextField"; text = "  1.   Weird talent ?"; ObjectID = "kdb-1D-iet"; */
+"kdb-1D-iet.text" = "  1.   Weird talent ?";
+
+/* Class = "UILabel"; text = "I need Help"; ObjectID = "koj-tr-5Wd"; */
+"koj-tr-5Wd.text" = "I need Help";
+
+/* Class = "UILabel"; text = "Card Question"; ObjectID = "lII-9H-waQ"; */
+"lII-9H-waQ.text" = "Card Question";
+
+/* Class = "UILabel"; text = "Step 2 : Share Link on your \ninsagram story"; ObjectID = "mjr-vm-EeA"; */
+"mjr-vm-EeA.text" = "Step 2 : Share Link on your \ninsagram story";
+
+/* Class = "UILabel"; text = "Step 1 : Copy your link"; ObjectID = "mri-Ix-AgW"; */
+"mri-Ix-AgW.text" = "Step 1 : Copy your link";
+
+/* Class = "UILabel"; text = "Milk Spill"; ObjectID = "mxW-LR-qrF"; */
+"mxW-LR-qrF.text" = "Milk Spill";
+
+/* Class = "UILabel"; text = "Secret Lair"; ObjectID = "nBY-4R-OEB"; */
+"nBY-4R-OEB.text" = "Secret Lair";
+
+/* Class = "UIButton"; normalTitle = "Cancel"; ObjectID = "oCh-Yp-fk5"; */
+"oCh-Yp-fk5.normalTitle" = "Cancel";
+
+/* Class = "UILabel"; text = "Want to discover about me ?\n"; ObjectID = "oXp-7Q-KCq"; */
+"oXp-7Q-KCq.text" = "Want to discover about me ?\n";
+
+/* Class = "UILabel"; text = "Premium"; ObjectID = "pGd-i3-69y"; */
+"pGd-i3-69y.text" = "Premium";
+
+/* Class = "UILabel"; text = "What's your instagram handle?"; ObjectID = "phc-Sa-ybL"; */
+"phc-Sa-ybL.text" = "What's your instagram handle?";
+
+/* Class = "UILabel"; text = "* Username is required"; ObjectID = "q0e-Gu-6c2"; */
+"q0e-Gu-6c2.text" = "* Username is required";
+
+/* Class = "UILabel"; text = "My Nick name ?"; ObjectID = "qTA-6O-cm2"; */
+"qTA-6O-cm2.text" = "My Nick name ?";
+
+/* Class = "UILabel"; text = "Share app with a friend"; ObjectID = "qUL-ug-i1E"; */
+"qUL-ug-i1E.text" = "Share app with a friend";
+
+/* Class = "UIButton"; normalTitle = "Cancel"; ObjectID = "rd9-4X-xiO"; */
+"rd9-4X-xiO.normalTitle" = "Cancel";
+
+/* Class = "UILabel"; text = "My Secret ?"; ObjectID = "s82-Cv-zkU"; */
+"s82-Cv-zkU.text" = "My Secret ?";
+
+/* Class = "UILabel"; text = "COMMUNITY"; ObjectID = "u1v-QS-Iv3"; */
+"u1v-QS-Iv3.text" = "COMMUNITY";
+
+/* Class = "UILabel"; text = "Select your avatar"; ObjectID = "w9u-Kq-bcf"; */
+"w9u-Kq-bcf.text" = "Select your avatar";
+
+/* Class = "UILabel"; text = "Form screen"; ObjectID = "wPz-tK-nJ1"; */
+"wPz-tK-nJ1.text" = "Form screen";
+
+/* Class = "UIButton"; normalTitle = "Done"; ObjectID = "wlG-y6-5B6"; */
+"wlG-y6-5B6.normalTitle" = "Done";
+
+/* Class = "UIButton"; normalTitle = "Done"; ObjectID = "xmK-UG-f2u"; */
+"xmK-UG-f2u.normalTitle" = "Done";
+
+/* Class = "UIButton"; configuration.title = "Copy Link"; ObjectID = "xuo-pL-DY8"; */
+"xuo-pL-DY8.configuration.title" = "Copy Link";
