@@ -8,7 +8,7 @@
 import Foundation
 
 class UserNameViewModel {
-    private let apiService: APIServiceProtocol
+    private let apiService: UserExistAPIServiceProtocol
     
     var errorMessage: String? {
         didSet {
@@ -21,7 +21,7 @@ class UserNameViewModel {
     var bindViewModelToController: (() -> ()) = {}
     var successCallback: (() -> ())?
     
-    init(apiService: APIServiceProtocol) {
+    init(apiService: UserExistAPIServiceProtocol) {
         self.apiService = apiService
     }
     

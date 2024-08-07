@@ -7,8 +7,8 @@
 
 import Alamofire
 
-class APIManager {
-    static let shared = APIManager()
+class AvatarAPIManager {
+    static let shared = AvatarAPIManager()
 
     private init() {}
 

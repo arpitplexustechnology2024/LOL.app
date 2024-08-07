@@ -34,3 +34,18 @@ struct Dataa: Codable {
         case avatarURL = "avatarUrl"
     }
 }
+
+// MARK: - RegisterProfile
+struct RegisterProfile: Codable {
+    let status: Int
+    let message: String
+    let data: DataClass
+}
+
+// MARK: - DataClass
+struct DataClass: Codable {
+    let name: String
+    let avatar: String
+    let username, isPurchase, link: String
+    let selectedCardTitle: [String]
+}

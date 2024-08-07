@@ -8,11 +8,11 @@
 import Alamofire
 import Foundation
 
-protocol APIServiceProtocol {
+protocol UserExistAPIServiceProtocol {
     func checkUsername(username: String, completion: @escaping (Result<UserNameResponse, Error>) -> Void)
 }
 
-class APIService: APIServiceProtocol {
+class UserExistAPIService: UserExistAPIServiceProtocol {
     func checkUsername(username: String, completion: @escaping (Result<UserNameResponse, Error>) -> Void) {
         let parameters: [String: String] = [
             "username": username

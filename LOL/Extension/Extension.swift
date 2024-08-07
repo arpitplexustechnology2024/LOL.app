@@ -46,18 +46,18 @@ extension UITapGestureRecognizer {
         guard let attributedText = label.attributedText else { return false }
         let mutableAttributedText = NSMutableAttributedString(attributedString: attributedText)
         mutableAttributedText.addAttributes([.font: label.font as Any], range: NSRange(location: 0, length: attributedText.length))
-
+        
         let textContainer = NSTextContainer(size: label.bounds.size)
         textContainer.lineFragmentPadding = 0
         textContainer.lineBreakMode = label.lineBreakMode
         textContainer.maximumNumberOfLines = label.numberOfLines
-
+        
         let layoutManager = NSLayoutManager()
         layoutManager.addTextContainer(textContainer)
-
+        
         let textStorage = NSTextStorage(attributedString: mutableAttributedText)
         textStorage.addLayoutManager(layoutManager)
-
+        
         let locationOfTouchInLabel = self.location(in: label)
         let textBoundingBox = layoutManager.usedRect(for: textContainer)
         let textContainerOffset = CGPoint(
@@ -68,7 +68,7 @@ extension UITapGestureRecognizer {
             x: locationOfTouchInLabel.x - textContainerOffset.x,
             y: locationOfTouchInLabel.y - textContainerOffset.y
         )
-
+        
         let indexOfCharacter = layoutManager.characterIndex(
             for: locationOfTouchInTextContainer,
             in: textContainer,
@@ -80,10 +80,10 @@ extension UITapGestureRecognizer {
 
 
 extension UIButton {
-
+    
     func applyGradientBorder(colors: [CGColor], lineWidth: CGFloat) {
         layer.sublayers?.removeAll { $0 is CAGradientLayer }
-
+        
         let gradientLayer = CAGradientLayer()
         gradientLayer.colors = colors
         gradientLayer.startPoint = CGPoint(x: 0, y: 0.5)
@@ -95,9 +95,9 @@ extension UIButton {
         shapeLayer.lineWidth = lineWidth
         shapeLayer.fillColor = UIColor.clear.cgColor
         shapeLayer.strokeColor = UIColor.black.cgColor
-
+        
         gradientLayer.mask = shapeLayer
-
+        
         layer.addSublayer(gradientLayer)
     }
 }

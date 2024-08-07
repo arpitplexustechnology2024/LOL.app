@@ -9,38 +9,39 @@ import UIKit
 
 class LanguageViewController: UIViewController {
     
-    @IBOutlet weak var englishLanguageButton: UIButton!
-    @IBOutlet weak var hindiLanguageButton: UIButton!
-    @IBOutlet weak var spanishLanguageButton: UIButton!
-    @IBOutlet weak var urduLanguageButton: UIButton!
-    @IBOutlet weak var franchLanguageButton: UIButton!
-    @IBOutlet weak var blankLanguageButton: UIButton!
+    @IBOutlet weak var englishLanguage: UIView!
+    @IBOutlet weak var hindiLanguage: UIView!
+    @IBOutlet weak var spanishLanguage: UIView!
+    @IBOutlet weak var urduLanguage: UIView!
+    @IBOutlet weak var franchLanguage: UIView!
+    @IBOutlet weak var blankLanguage: UIView!
+    
+    @IBOutlet var languageHeightConstraints: [NSLayoutConstraint]!
+    @IBOutlet var languageWidthConstraints: [NSLayoutConstraint]!
+    
+    @IBOutlet var languageLogo: [UILabel]!
+    @IBOutlet var languageText: [UILabel]!
     
     @IBOutlet weak var doneButton: UIButton!
     @IBOutlet weak var backButton: UIButton!
     private var activityIndicator: UIActivityIndicatorView!
     
     var selectedLanguage: String?
+    private let viewModel = RegisterViewModel()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         adjustImageViewForDevice()
-        setupRadioButtons()
+        setupLanguageViews()
         setupUI()
     }
     
     func setupUI() {
-        // Done Button Gradient Color
+        // Other UI setup
         doneButton.layer.cornerRadius = doneButton.frame.height / 2
         doneButton.frame = CGRect(x: (view.frame.width - 398) / 2, y: view.center.y - 25, width: 398, height: 50)
         applyGradientToButton(doneButton)
         doneButton.setTitle("Done", for: .normal)
-        
-        addShadow(to: englishLanguageButton)
-        addShadow(to: hindiLanguageButton)
-        addShadow(to: spanishLanguageButton)
-        addShadow(to: urduLanguageButton)
-        addShadow(to: franchLanguageButton)
         
         // Activity Indicator Setup
         activityIndicator = UIActivityIndicatorView(style: .medium)
@@ -54,11 +55,8 @@ class LanguageViewController: UIViewController {
             activityIndicator.centerYAnchor.constraint(equalTo: doneButton.centerYAnchor)
         ])
         
-        if traitCollection.userInterfaceStyle == .dark {
-            backButton.setImage(UIImage(named: "BackIcon_Dark"), for: .normal)
-        } else {
-            backButton.setImage(UIImage(named: "BackIcon_Light"), for: .normal)
-        }
+        let backButtonImageName = traitCollection.userInterfaceStyle == .dark ? "BackIcon_Dark" : "BackIcon_Light"
+        backButton.setImage(UIImage(named: backButtonImageName), for: .normal)
     }
     
     func applyGradientToButton(_ button: UIButton) {
@@ -73,42 +71,61 @@ class LanguageViewController: UIViewController {
         button.layer.masksToBounds = true
     }
     
-    
-    @IBAction func btnLanguageSelectedTapped(_ sender: UIButton) {
-        resetButtons()
-        sender.isSelected = true
+    @objc func viewLanguageSelectedTapped(_ sender: UITapGestureRecognizer) {
+        guard let selectedView = sender.view else { return }
+        resetViews()
+        addShadow(to: selectedView)
         
-        switch sender {
-        case englishLanguageButton:
-            selectedLanguage = "en"
-            
-        case hindiLanguageButton:
-            selectedLanguage = "hi"
-            
-        case spanishLanguageButton:
-            selectedLanguage = "es"
-            
-        case urduLanguageButton:
-            selectedLanguage = "ur"
-            
-        case franchLanguageButton:
-            selectedLanguage = "fr"
-            
-        default:
-            selectedLanguage = nil
+        let views = [englishLanguage, hindiLanguage, spanishLanguage, urduLanguage, franchLanguage]
+        for view in views {
+            if view != selectedView {
+                view?.layer.shadowOpacity = 0
+            }
         }
-        UserDefaults.standard.set(selectedLanguage, forKey: LanguageSet.languageSelected)
-        UserDefaults.standard.synchronize()
+        
+        switch selectedView {
+        case englishLanguage:
+            selectedLanguage = "\(1)"
+        case hindiLanguage:
+            selectedLanguage = "\(2)"
+        case spanishLanguage:
+            selectedLanguage = "\(3)"
+        case urduLanguage:
+            selectedLanguage = "\(4)"
+        case franchLanguage:
+            selectedLanguage = "\(5)"
+        default:
+            selectedLanguage = "\(1)"
+        }
+        updateBorders(for: selectedView)
     }
     
     @IBAction func btnDoneTapped(_ sender: UIButton) {
         doneButton.setTitle("", for: .normal)
         activityIndicator.startAnimating()
-        DispatchQueue.main.async{
-            self.activityIndicator.stopAnimating()
-            self.doneButton.setTitle("Done", for: .normal)
-            let vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(identifier: "CustomTabbarController") as! CustomTabbarController
-            self.navigationController?.pushViewController(vc, animated: true)
+        
+        let name = UserDefaults.standard.string(forKey: "name")
+        let username = UserDefaults.standard.string(forKey: "username")
+        let defaultAvatar = "https://lolcards.link/api/public/images/AvatarDefault.png"
+        let avatar = UserDefaults.standard.string(forKey: "avatarURL") ?? defaultAvatar
+        
+        viewModel.registerUser(name: name!, avatar: avatar, username: username!, language: selectedLanguage ?? "\(1)") { [weak self] result in
+            guard let self = self else { return }
+            
+            DispatchQueue.main.async {
+                self.activityIndicator.stopAnimating()
+                self.doneButton.setTitle("Done", for: .normal)
+                
+                switch result {
+                case .success(let profile):
+                    print("Successfully registered: \(profile)")
+                    let vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(identifier: "CustomTabbarController") as! CustomTabbarController
+                    self.navigationController?.pushViewController(vc, animated: true)
+
+                case .failure(let error):
+                    print("Registration error: \(error.localizedDescription)")
+                }
+            }
         }
     }
     
@@ -117,99 +134,94 @@ class LanguageViewController: UIViewController {
     }
     
     func adjustImageViewForDevice() {
-        var width: CGFloat = 131
-        var height: CGFloat = 114
-        
+        let screenHeight = UIScreen.main.nativeBounds.height
         if UIDevice.current.userInterfaceIdiom == .phone {
-            switch UIScreen.main.nativeBounds.height {
+            let height: CGFloat
+            let width: CGFloat
+            let logoSize: CGFloat
+            let textSize: CGFloat
+            
+            switch screenHeight {
             case 1136, 1334, 1920, 2208:
+                height = 101
                 width = 111
-                height = 94
+                logoSize = 50
+                textSize = 14
             case 2436, 1792, 2556, 2532:
+                height = 131
                 width = 141
-                height = 124
+                logoSize = 65
+                textSize = 17
             case 2796, 2778, 2688:
+                height = 141
                 width = 151
-                height = 134
+                logoSize = 70
+                textSize = 20
             default:
+                height = 121
                 width = 131
-                height = 114
+                logoSize = 60
+                textSize = 15
             }
+            
+            languageText.forEach { label in
+                label.font = UIFont(name: "Lato-SemiBold", size: textSize)
+            }
+            languageLogo.forEach { label in
+                label.font = UIFont(name: "Lato-SemiBold", size: logoSize)
+            }
+            setConstraints(height: height, width: width)
         }
-        
-        englishLanguageButton.translatesAutoresizingMaskIntoConstraints = false
-        hindiLanguageButton.translatesAutoresizingMaskIntoConstraints = false
-        spanishLanguageButton.translatesAutoresizingMaskIntoConstraints = false
-        urduLanguageButton.translatesAutoresizingMaskIntoConstraints = false
-        franchLanguageButton.translatesAutoresizingMaskIntoConstraints = false
-        blankLanguageButton.translatesAutoresizingMaskIntoConstraints = false
-        NSLayoutConstraint.activate([
-            englishLanguageButton.widthAnchor.constraint(equalToConstant: width),
-            englishLanguageButton.heightAnchor.constraint(equalToConstant: height),
-            hindiLanguageButton.widthAnchor.constraint(equalToConstant: width),
-            hindiLanguageButton.heightAnchor.constraint(equalToConstant: height),
-            spanishLanguageButton.widthAnchor.constraint(equalToConstant: width),
-            spanishLanguageButton.heightAnchor.constraint(equalToConstant: height),
-            urduLanguageButton.widthAnchor.constraint(equalToConstant: width),
-            urduLanguageButton.heightAnchor.constraint(equalToConstant: height),
-            franchLanguageButton.widthAnchor.constraint(equalToConstant: width),
-            franchLanguageButton.heightAnchor.constraint(equalToConstant: height),
-            blankLanguageButton.widthAnchor.constraint(equalToConstant: width),
-            blankLanguageButton.heightAnchor.constraint(equalToConstant: height),
-        ])
+    }
+    
+    func setConstraints(height: CGFloat, width: CGFloat) {
+        languageHeightConstraints.forEach { $0.constant = height }
+        languageWidthConstraints.forEach { $0.constant = width }
     }
 }
 
 extension LanguageViewController {
     
-    private func setupRadioButtons() {
-        setupEnglishButton(englishLanguageButton)
-        setupHindiButton(hindiLanguageButton)
-        setupSpanishButton(spanishLanguageButton)
-        setupUrduButton(urduLanguageButton)
-        setupFranchButton(franchLanguageButton)
+    private func setupLanguageViews() {
+        let views = [englishLanguage, hindiLanguage, spanishLanguage, urduLanguage, franchLanguage]
+        for view in views {
+            let tapGesture = UITapGestureRecognizer(target: self, action: #selector(viewLanguageSelectedTapped(_:)))
+            view?.addGestureRecognizer(tapGesture)
+            setCornerRadiusAndBorder(for: view)
+        }
     }
     
-    private func resetButtons() {
-        englishLanguageButton.isSelected = false
-        hindiLanguageButton.isSelected = false
-        spanishLanguageButton.isSelected = false
-        urduLanguageButton.isSelected = false
-        franchLanguageButton.isSelected = false
+    private func resetViews() {
+        let views = [englishLanguage, hindiLanguage, spanishLanguage, urduLanguage, franchLanguage]
+        views.forEach { setCornerRadiusAndBorder(for: $0, borderWidth: 0) }
     }
     
-    private func setupEnglishButton(_ button: UIButton) {
-        button.setImage(UIImage(named: "EnglishLanguage"), for: .normal)
-        button.setImage(UIImage(named: "EnglishLanguageFill"), for: .selected)
+    private func addShadow(to view: UIView) {
+        view.layer.shadowColor = UIColor.darkGray.cgColor
+        view.layer.shadowOpacity = 0.5
+        view.layer.shadowOffset = CGSize(width: 0, height: 2)
+        view.layer.shadowRadius = 7.4
+        view.layer.cornerRadius = 20
+        view.layer.masksToBounds = false
     }
     
-    private func setupHindiButton(_ button: UIButton) {
-        button.setImage(UIImage(named: "HindiLanguage"), for: .normal)
-        button.setImage(UIImage(named: "HindiLanguageFill"), for: .selected)
+    private func updateBorders(for selectedView: UIView) {
+        let isDarkMode = traitCollection.userInterfaceStyle == .dark
+        let borderColor: UIColor = isDarkMode ? .white : .black
+        let views = [englishLanguage, hindiLanguage, spanishLanguage, urduLanguage, franchLanguage]
+        for view in views {
+            if view == selectedView {
+                view?.layer.borderWidth = 3
+                view?.layer.borderColor = borderColor.cgColor
+            } else {
+                view?.layer.borderWidth = 0
+                view?.layer.borderColor = UIColor.clear.cgColor
+            }
+        }
     }
     
-    private func setupSpanishButton(_ button: UIButton) {
-        button.setImage(UIImage(named: "SpanishLanguage"), for: .normal)
-        button.setImage(UIImage(named: "SpanishLanguageFill"), for: .selected)
+    private func setCornerRadiusAndBorder(for view: UIView?, borderWidth: CGFloat = 0) {
+        view?.layer.cornerRadius = 20
+        view?.layer.borderWidth = borderWidth
     }
-    
-    private func setupUrduButton(_ button: UIButton) {
-        button.setImage(UIImage(named: "UrduLanguage"), for: .normal)
-        button.setImage(UIImage(named: "UrduLanguageFill"), for: .selected)
-    }
-    
-    private func setupFranchButton(_ button: UIButton) {
-        button.setImage(UIImage(named: "FranchLanguage"), for: .normal)
-        button.setImage(UIImage(named: "FranchLanguageFill"), for: .selected)
-    }
-    
-}
-
-func addShadow(to button: UIButton) {
-    button.layer.shadowColor = UIColor.darkGray.cgColor
-    button.layer.shadowOpacity = 0.5
-    button.layer.shadowOffset = CGSize(width: 0, height: 2)
-    button.layer.shadowRadius = 7.4
-    button.layer.cornerRadius = 10
-    button.layer.masksToBounds = false
 }

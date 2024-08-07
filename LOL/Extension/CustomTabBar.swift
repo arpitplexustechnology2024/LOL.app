@@ -48,6 +48,4 @@ class CustomTabBar: UITabBar {
 
 class CustomTabbarController : UITabBarController {
     
-    
-    
 }

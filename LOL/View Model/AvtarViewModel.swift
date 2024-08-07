@@ -13,7 +13,7 @@ class AvatarViewModel {
     var onFetchError: ((Error) -> Void)?
 
     func fetchAvatars() {
-        APIManager.shared.fetchAvatars { [weak self] result in
+        AvatarAPIManager.shared.fetchAvatars { [weak self] result in
             switch result {
             case .success(let avatarResponse):
                 DispatchQueue.global(qos: .background).async {

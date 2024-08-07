@@ -62,10 +62,11 @@
 		BDB402ED2C614CA900D26939 /* LanguageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDB402EC2C614CA900D26939 /* LanguageViewController.swift */; };
 		BDB402F52C61910500D26939 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = BDB402F32C61910500D26939 /* Localizable.strings */; };
 		BDB402F82C61913600D26939 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BD23983E2C5A9B7D00D91363 /* Main.storyboard */; };
-		BDB403032C619ACF00D26939 /* CardQuestionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDB403022C619ACF00D26939 /* CardQuestionViewController.swift */; };
 		BDB403052C61A38C00D26939 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDB403042C61A38C00D26939 /* HomeViewController.swift */; };
 		BDB403072C61A3AA00D26939 /* ProfileCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDB403062C61A3AA00D26939 /* ProfileCollectionViewCell.swift */; };
 		BDB403092C61A62800D26939 /* StaticFunction.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDB403082C61A62800D26939 /* StaticFunction.swift */; };
+		BDBC6F612C628D5900B1D17D /* RegisterAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDBC6F602C628D5900B1D17D /* RegisterAPI.swift */; };
+		BDBC6F632C628DA600B1D17D /* RegisterViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDBC6F622C628DA600B1D17D /* RegisterViewModel.swift */; };
 		BDFAE4ED2C5BF26E0014D3BE /* PrivacyPolicyText.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDFAE4EC2C5BF26E0014D3BE /* PrivacyPolicyText.swift */; };
 		C708DC9C7D4B2F7E851486C4 /* Pods_LOL_LOLUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 89EA42619D638D47C374D8EC /* Pods_LOL_LOLUITests.framework */; };
 		C7A95595D6BDA12F3B2D8AF6 /* Pods_LOL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D4932C5A43A532287FEA9768 /* Pods_LOL.framework */; };
@@ -160,10 +161,11 @@
 		BDB402FF2C61920D00D26939 /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/Main.strings; sourceTree = "<group>"; };
 		BDB403002C61920D00D26939 /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/Localizable.strings; sourceTree = "<group>"; };
 		BDB403012C61926E00D26939 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Main.strings; sourceTree = "<group>"; };
-		BDB403022C619ACF00D26939 /* CardQuestionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardQuestionViewController.swift; sourceTree = "<group>"; };
 		BDB403042C61A38C00D26939 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		BDB403062C61A3AA00D26939 /* ProfileCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileCollectionViewCell.swift; sourceTree = "<group>"; };
 		BDB403082C61A62800D26939 /* StaticFunction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StaticFunction.swift; sourceTree = "<group>"; };
+		BDBC6F602C628D5900B1D17D /* RegisterAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterAPI.swift; sourceTree = "<group>"; };
+		BDBC6F622C628DA600B1D17D /* RegisterViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewModel.swift; sourceTree = "<group>"; };
 		BDFAE4EC2C5BF26E0014D3BE /* PrivacyPolicyText.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PrivacyPolicyText.swift; sourceTree = "<group>"; };
 		C977EF8C1CCB68524EB3E4A2 /* Pods-LOL-LOLUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LOL-LOLUITests.release.xcconfig"; path = "Target Support Files/Pods-LOL-LOLUITests/Pods-LOL-LOLUITests.release.xcconfig"; sourceTree = "<group>"; };
 		CD02035B775576A34317BF92 /* Pods_LOLTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_LOLTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -300,7 +302,6 @@
 				BD2398A32C5AE25800D91363 /* ProfileViewController.swift */,
 				BD59B3CF2C5D44D70061ABA8 /* AvtarBottomViewController.swift */,
 				BDB402EC2C614CA900D26939 /* LanguageViewController.swift */,
-				BDB403022C619ACF00D26939 /* CardQuestionViewController.swift */,
 				BDB403042C61A38C00D26939 /* HomeViewController.swift */,
 			);
 			path = Controller;
@@ -375,6 +376,7 @@
 			children = (
 				BD2398AD2C5AF12C00D91363 /* UserExitsViewModel.swift */,
 				BD59B3D62C5D4F900061ABA8 /* AvtarViewModel.swift */,
+				BDBC6F622C628DA600B1D17D /* RegisterViewModel.swift */,
 			);
 			path = "View Model";
 			sourceTree = "<group>";
@@ -384,6 +386,7 @@
 			children = (
 				BD2398B02C5AF15800D91363 /* UserExitsAPI.swift */,
 				BD59B3D42C5D4F730061ABA8 /* AvtarAPI.swift */,
+				BDBC6F602C628D5900B1D17D /* RegisterAPI.swift */,
 			);
 			path = "API Manager";
 			sourceTree = "<group>";
@@ -689,6 +692,7 @@
 				BD2398392C5A9B7D00D91363 /* AppDelegate.swift in Sources */,
 				BD2398AE2C5AF12C00D91363 /* UserExitsViewModel.swift in Sources */,
 				BD2398A22C5ACFF200D91363 /* PrivacyPolicyViewController.swift in Sources */,
+				BDBC6F632C628DA600B1D17D /* RegisterViewModel.swift in Sources */,
 				BD23987E2C5A9EE100D91363 /* Switch.swift in Sources */,
 				BDB403072C61A3AA00D26939 /* ProfileCollectionViewCell.swift in Sources */,
 				BD2398A02C5ABCBD00D91363 /* SignupViewController.swift in Sources */,
@@ -700,6 +704,7 @@
 				BDB402ED2C614CA900D26939 /* LanguageViewController.swift in Sources */,
 				BD2398AB2C5AF0F300D91363 /* Model.swift in Sources */,
 				BD59B3DD2C5D69A60061ABA8 /* NoDataBottomBarView.swift in Sources */,
+				BDBC6F612C628D5900B1D17D /* RegisterAPI.swift in Sources */,
 				BD59B3D52C5D4F730061ABA8 /* AvtarAPI.swift in Sources */,
 				BD2398A42C5AE25800D91363 /* ProfileViewController.swift in Sources */,
 				BDB402E62C613CCB00D26939 /* NoDataView.swift in Sources */,
@@ -709,7 +714,6 @@
 				BDB403092C61A62800D26939 /* StaticFunction.swift in Sources */,
 				BDB403052C61A38C00D26939 /* HomeViewController.swift in Sources */,
 				BD23983B2C5A9B7D00D91363 /* SceneDelegate.swift in Sources */,
-				BDB403032C619ACF00D26939 /* CardQuestionViewController.swift in Sources */,
 				BD59B3D02C5D44D70061ABA8 /* AvtarBottomViewController.swift in Sources */,
 				BD2398432C5A9B7D00D91363 /* LOL.xcdatamodeld in Sources */,
 				BD2398B12C5AF15800D91363 /* UserExitsAPI.swift in Sources */,

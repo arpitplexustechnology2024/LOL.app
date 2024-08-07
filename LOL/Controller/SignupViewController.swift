@@ -34,7 +34,7 @@ class SignupViewController: UIViewController {
         setupPrivacyPolicyLabel()
         setupCustomSwitch()
         
-        let apiService = APIService()
+        let apiService = UserExistAPIService()
         self.userNameViewModel = UserNameViewModel(apiService: apiService)
         self.userNameViewModel.bindViewModelToController = {
             self.updateErrorLabel()

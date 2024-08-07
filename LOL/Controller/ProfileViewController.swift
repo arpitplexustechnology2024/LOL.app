@@ -19,18 +19,16 @@ class ProfileViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var letsgoButton: UIButton!
     @IBOutlet weak var backButton: UIButton!
     
-    private var selectedIndexPath: IndexPath?
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         setupUI()
-        if let username = UserDefaults.standard.string(forKey: "username") {
-            Label.text = "Select \(username) avatar"
-        }
     }
     
     func setupUI() {
         // Avtar Image View
+        if let url = URL(string: "https://lolcards.link/api/public/images/AvatarDefault.png") {
+            AvtarImageview.sd_setImage(with: url)
+        }
         self.AvtarImageview.layer.cornerRadius = AvtarImageview.frame.height / 2
         self.AvtarImageview.isUserInteractionEnabled = true
         let tapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(selectAvtarTapped(_:)))
@@ -60,11 +58,15 @@ class ProfileViewController: UIViewController, UITextFieldDelegate {
         }
     }
     
-    @objc func selectAvtarTapped(_ sender: UITapGestureRecognizer){
+    @objc func selectAvtarTapped(_ sender: UITapGestureRecognizer) {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         let bottomSheetVC = storyboard.instantiateViewController(withIdentifier: "AvtarBottomViewController") as! AvtarBottomViewController
         
         bottomSheetVC.onAvatarSelected = { [weak self] avatarURL in
+            // Save the URL to UserDefaults
+            UserDefaults.standard.set(avatarURL, forKey: "avatarURL")
+            print("AvatarURL : \(avatarURL)")
+    
             self?.AvtarImageview.sd_setImage(with: URL(string: avatarURL), placeholderImage: UIImage(named: "placeholder"))
         }
         
@@ -74,6 +76,7 @@ class ProfileViewController: UIViewController, UITextFieldDelegate {
         }
         present(bottomSheetVC, animated: true, completion: nil)
     }
+
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         textField.resignFirstResponder()
