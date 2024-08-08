@@ -30,11 +30,8 @@ class ProfileCollectionViewCell: UICollectionViewCell {
     }
     
     private func setupCell() {
-        // Set the corner radius
         self.contentView.layer.cornerRadius = 20
         self.contentView.layer.masksToBounds = true
-        
-        // Set the shadow
         self.layer.shadowColor = UIColor.black.cgColor
         self.layer.shadowOffset = CGSize(width: 0, height: 3)
         self.layer.shadowRadius = 5
@@ -44,11 +41,17 @@ class ProfileCollectionViewCell: UICollectionViewCell {
     
     private func makeProfileImageViewCircular() {
         profile_ImageView.layer.cornerRadius = profile_ImageView.frame.size.width / 2
+        profile_ImageView.layer.borderWidth = 2
+        profile_ImageView.layer.borderColor = UIColor.white.cgColor
         profile_ImageView.layer.masksToBounds = true
     }
     
     func configure(with cardQuestion: String) {
         let selectedLanguage = UserDefaults.standard.string(forKey: LanguageSet.languageSelected) ?? "en"
         questionTextLabel.text = cardQuestion.localizableString(loc: selectedLanguage)
+    }
+    
+    func setProfileImage(_ image: UIImage?) {
+        profile_ImageView.image = image
     }
 }

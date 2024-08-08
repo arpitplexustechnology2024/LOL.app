@@ -63,7 +63,6 @@ class ProfileViewController: UIViewController, UITextFieldDelegate {
         let bottomSheetVC = storyboard.instantiateViewController(withIdentifier: "AvtarBottomViewController") as! AvtarBottomViewController
         
         bottomSheetVC.onAvatarSelected = { [weak self] avatarURL in
-            // Save the URL to UserDefaults
             UserDefaults.standard.set(avatarURL, forKey: "avatarURL")
             print("AvatarURL : \(avatarURL)")
     

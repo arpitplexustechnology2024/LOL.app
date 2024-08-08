@@ -19,7 +19,6 @@ class AvtarBottomViewController: UIViewController {
     
     var viewModel = AvatarViewModel()
     var onAvatarSelected: ((String) -> Void)?
-    
     var selectedIndexPath: IndexPath?
     
     override func viewDidLoad() {
