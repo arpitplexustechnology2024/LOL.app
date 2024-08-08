@@ -7,18 +7,12 @@
 
 import UIKit
 
-protocol ProfileCollectionViewCellDelegate: AnyObject {
-    func didTapProfileChangeButton(in cell: ProfileCollectionViewCell)
-}
-
 class ProfileCollectionViewCell: UICollectionViewCell {
     
     @IBOutlet weak var profile_ImageView: UIImageView!
     @IBOutlet weak var cardImageView: UIImageView!
     @IBOutlet weak var questionTextLabel: UILabel!
     @IBOutlet weak var profile_ChangeButton: UIButton!
-    
-    weak var delegate: ProfileCollectionViewCellDelegate?
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -51,13 +45,6 @@ class ProfileCollectionViewCell: UICollectionViewCell {
     private func makeProfileImageViewCircular() {
         profile_ImageView.layer.cornerRadius = profile_ImageView.frame.size.width / 2
         profile_ImageView.layer.masksToBounds = true
-        
-        profile_ChangeButton.setImage(UIImage(named: "EditPhoto"), for: .normal)
-        profile_ChangeButton.addTarget(self, action: #selector(profileChangeButtonTapped), for: .touchUpInside)
-    }
-    
-    @objc func profileChangeButtonTapped() {
-        delegate?.didTapProfileChangeButton(in: self)
     }
     
     func configure(with cardQuestion: String) {
