@@ -5,3 +5,26 @@
   Created by Arpit iOS Dev. on 05/08/24.
   
 */
+
+// Tab bar Item
+"TabbarItemKey01" = "Hogar";
+"TabbarItemKey02" = "Bandeja de entrada";
+"TabbarItemKey03" = "Pantalla de formulario";
+"TabbarItemKey04" = "Más aplicaciones";
+"TabbarItemKey05" = "Ajustes";
+
+// Home View Controller
+"QuestionsKey01" = "¿Me conoces mejor?";
+"QuestionsKey02" = "¿Qué tan bien me conoces?";
+"QuestionsKey03" = "¿Quieres saber sobre mí?";
+"QuestionsKey04" = "¿Qué tan bien me conoces?";
+"QuestionsKey05" = "¿Me conoces mejor?";
+"QuestionsKey06" = "¿Quieres saber sobre mí?";
+"QuestionsKey07" = "¿Qué tan bien me conoces?";
+
+
+// Edit View Controller
+"EditDescriptionKey" = "Seleccione las preguntas de la tarjeta para saber sobre usted cuando otra persona abra su enlace. puedes editar tu pregunta...";
+"EditNameKey" = "Nombre";
+"EditSelectQuesKey" = "Seleccione cinco preguntas";
+"EditSaveCardBtnKey" = "Guardar tarjeta";

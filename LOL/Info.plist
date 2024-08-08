@@ -19,6 +19,10 @@
         <string>HelveticaRoundedLTStd-Bd.ttf</string>
         <string>Helvetica Rounded Bold.otf</string>
     </array>
+    <key>NSCameraUsageDescription</key>
+    <string>We need access to your camera to take photos.</string>
+    <key>NSPhotoLibraryUsageDescription</key>
+    <string>We need access to your photo library to select photos.</string>
 	<key>UIApplicationSceneManifest</key>
 	<dict>
 		<key>UIApplicationSupportsMultipleScenes</key>

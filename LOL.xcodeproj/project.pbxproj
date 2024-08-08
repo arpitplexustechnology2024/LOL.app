@@ -54,6 +54,8 @@
 		BD59B3DE2C5D69A60061ABA8 /* NoDataBottomBarView.xib in Resources */ = {isa = PBXBuildFile; fileRef = BD59B3D92C5D69A60061ABA8 /* NoDataBottomBarView.xib */; };
 		BD59B3DF2C5D69A60061ABA8 /* NoInternetBottombarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD59B3DA2C5D69A60061ABA8 /* NoInternetBottombarView.swift */; };
 		BD59B3E02C5D69A60061ABA8 /* NoInternetBottombarView.xib in Resources */ = {isa = PBXBuildFile; fileRef = BD59B3DB2C5D69A60061ABA8 /* NoInternetBottombarView.xib */; };
+		BD9341422C63FCCB00C24A4D /* MyCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD9341412C63FCCB00C24A4D /* MyCollectionViewController.swift */; };
+		BD9341442C63FCF700C24A4D /* CustomCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD9341432C63FCF700C24A4D /* CustomCell.swift */; };
 		BDB402E62C613CCB00D26939 /* NoDataView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDB402E12C613CCB00D26939 /* NoDataView.swift */; };
 		BDB402E72C613CCB00D26939 /* NoDataView.xib in Resources */ = {isa = PBXBuildFile; fileRef = BDB402E22C613CCB00D26939 /* NoDataView.xib */; };
 		BDB402E82C613CCB00D26939 /* NoInternetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDB402E32C613CCB00D26939 /* NoInternetView.swift */; };
@@ -145,6 +147,8 @@
 		BD59B3D92C5D69A60061ABA8 /* NoDataBottomBarView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NoDataBottomBarView.xib; sourceTree = "<group>"; };
 		BD59B3DA2C5D69A60061ABA8 /* NoInternetBottombarView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NoInternetBottombarView.swift; sourceTree = "<group>"; };
 		BD59B3DB2C5D69A60061ABA8 /* NoInternetBottombarView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NoInternetBottombarView.xib; sourceTree = "<group>"; };
+		BD9341412C63FCCB00C24A4D /* MyCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyCollectionViewController.swift; sourceTree = "<group>"; };
+		BD9341432C63FCF700C24A4D /* CustomCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomCell.swift; sourceTree = "<group>"; };
 		BDB402E12C613CCB00D26939 /* NoDataView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NoDataView.swift; sourceTree = "<group>"; };
 		BDB402E22C613CCB00D26939 /* NoDataView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NoDataView.xib; sourceTree = "<group>"; };
 		BDB402E32C613CCB00D26939 /* NoInternetView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NoInternetView.swift; sourceTree = "<group>"; };
@@ -303,6 +307,7 @@
 				BD59B3CF2C5D44D70061ABA8 /* AvtarBottomViewController.swift */,
 				BDB402EC2C614CA900D26939 /* LanguageViewController.swift */,
 				BDB403042C61A38C00D26939 /* HomeViewController.swift */,
+				BD9341412C63FCCB00C24A4D /* MyCollectionViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -396,6 +401,7 @@
 			children = (
 				BD59B3D22C5D4D7A0061ABA8 /* AvatarCollectionViewCell.swift */,
 				BDB403062C61A3AA00D26939 /* ProfileCollectionViewCell.swift */,
+				BD9341432C63FCF700C24A4D /* CustomCell.swift */,
 			);
 			path = Cell;
 			sourceTree = "<group>";
@@ -702,6 +708,7 @@
 				BDB402E82C613CCB00D26939 /* NoInternetView.swift in Sources */,
 				BD23987F2C5A9EE100D91363 /* UIImage+Gif.swift in Sources */,
 				BDB402ED2C614CA900D26939 /* LanguageViewController.swift in Sources */,
+				BD9341442C63FCF700C24A4D /* CustomCell.swift in Sources */,
 				BD2398AB2C5AF0F300D91363 /* Model.swift in Sources */,
 				BD59B3DD2C5D69A60061ABA8 /* NoDataBottomBarView.swift in Sources */,
 				BDBC6F612C628D5900B1D17D /* RegisterAPI.swift in Sources */,
@@ -713,6 +720,7 @@
 				BD59B3D72C5D4F900061ABA8 /* AvtarViewModel.swift in Sources */,
 				BDB403092C61A62800D26939 /* StaticFunction.swift in Sources */,
 				BDB403052C61A38C00D26939 /* HomeViewController.swift in Sources */,
+				BD9341422C63FCCB00C24A4D /* MyCollectionViewController.swift in Sources */,
 				BD23983B2C5A9B7D00D91363 /* SceneDelegate.swift in Sources */,
 				BD59B3D02C5D44D70061ABA8 /* AvtarBottomViewController.swift in Sources */,
 				BD2398432C5A9B7D00D91363 /* LOL.xcdatamodeld in Sources */,

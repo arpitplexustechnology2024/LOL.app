@@ -10,7 +10,7 @@ import UIKit
 class CustomTabBar: UITabBar {
     override func sizeThatFits(_ size: CGSize) -> CGSize {
         var sizeThatFits = super.sizeThatFits(size)
-        sizeThatFits.height = 60
+        sizeThatFits.height = 61
         return sizeThatFits
     }
     
@@ -18,9 +18,9 @@ class CustomTabBar: UITabBar {
         super.layoutSubviews()
         
         var frame = self.frame
-        frame.origin.y = self.superview!.frame.height - frame.height - 34
-        frame.origin.x = 17
-        frame.size.width = self.superview!.frame.width - 35
+        frame.origin.y = self.superview!.frame.height - frame.height - 33.5
+        frame.origin.x = 22
+        frame.size.width = self.superview!.frame.width - 43
         self.frame = frame
         
         applyGradient(colors: [UIColor(hex: "#FA4957").cgColor, UIColor(hex: "#FD7E41").cgColor])

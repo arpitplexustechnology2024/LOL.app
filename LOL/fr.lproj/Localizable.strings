@@ -5,3 +5,26 @@
   Created by Arpit iOS Dev. on 05/08/24.
   
 */
+
+// Tab bar Item
+"TabbarItemKey01" = "Maison";
+"TabbarItemKey02" = "boîte de réception ";
+"TabbarItemKey03" = "Écran de formulaire";
+"TabbarItemKey04" = "Plus d'application";
+"TabbarItemKey05" = "Paramètres";
+
+// Home View Controller
+"QuestionsKey01" = "Me connais-tu mieux ?";
+"QuestionsKey02" = "Dans quelle mesure me connaissez-vous ?";
+"QuestionsKey03" = "Envie de me découvrir ?";
+"QuestionsKey04" = "Dans quelle mesure me connaissez-vous ?";
+"QuestionsKey05" = "Me connais-tu mieux ?";
+"QuestionsKey06" = "Envie de me découvrir ?";
+"QuestionsKey07" = "Dans quelle mesure me connaissez-vous ?";
+
+
+// Edit View Controller
+"EditDescriptionKey" = "Sélectionnez les questions de la carte pour vous connaître lorsqu'une autre personne ouvre votre lien. vous pouvez modifier votre question...";
+"EditNameKey" = "Nom";
+"EditSelectQuesKey" = "Sélectionnez cinq questions";
+"EditSaveCardBtnKey" = "Enregistrer la carte";

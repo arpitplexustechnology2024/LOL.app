@@ -13,6 +13,15 @@
 "TabbarItemKey04" = "More App";
 "TabbarItemKey05" = "Settings";
 
+// Home View Controller
+"QuestionsKey01" = "Do you know me better ?";
+"QuestionsKey02" = "How well do you know myself ?";
+"QuestionsKey03" = "Want to discover about me ?";
+"QuestionsKey04" = "How well do you know myself ?";
+"QuestionsKey05" = "Do you know me better ?";
+"QuestionsKey06" = "Want to discover about me ?";
+"QuestionsKey07" = "How well do you know myself ?";
+
 // Edit View Controller
 "EditDescriptionKey" = "Select the questions from the card to know about yourself when other person open your link. you can edit your question... ";
 "EditNameKey" = "Name";

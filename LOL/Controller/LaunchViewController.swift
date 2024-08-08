@@ -12,7 +12,7 @@ class LaunchViewController: UIViewController {
     
     @IBOutlet weak var loadingView: LottieAnimationView!
     @IBOutlet weak var backgroundImageView: UIImageView!
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         setupGradientBackground()
@@ -51,7 +51,9 @@ class LaunchViewController: UIViewController {
             self.loadingView.stop()
             self.loadingView.isHidden = true
             
-            let vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(identifier: "SignupViewController")
+            let isUserRegistered = UserDefaults.standard.bool(forKey: "isUserRegistered")
+            let identifier = isUserRegistered ? "CustomTabbarController" : "SignupViewController"
+            let vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(identifier: identifier)
             self.navigationController?.pushViewController(vc, animated: true)
             
         }

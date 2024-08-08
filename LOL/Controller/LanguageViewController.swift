@@ -27,6 +27,7 @@ class LanguageViewController: UIViewController {
     private var activityIndicator: UIActivityIndicatorView!
     
     var selectedLanguage: String?
+    var selectedLanguageAPI: String?
     private let viewModel = RegisterViewModel()
     
     override func viewDidLoad() {
@@ -85,19 +86,28 @@ class LanguageViewController: UIViewController {
         
         switch selectedView {
         case englishLanguage:
-            selectedLanguage = "\(1)"
+            selectedLanguage = "en"
+            selectedLanguageAPI = "\(1)"
         case hindiLanguage:
-            selectedLanguage = "\(2)"
+            selectedLanguage = "hi"
+            selectedLanguageAPI = "\(2)"
         case spanishLanguage:
-            selectedLanguage = "\(3)"
+            selectedLanguage = "es"
+            selectedLanguageAPI = "\(3)"
         case urduLanguage:
-            selectedLanguage = "\(4)"
+            selectedLanguage = "ur"
+            selectedLanguageAPI = "\(4)"
         case franchLanguage:
-            selectedLanguage = "\(5)"
+            selectedLanguage = "fr"
+            selectedLanguageAPI = "\(5)"
         default:
-            selectedLanguage = "\(1)"
+            selectedLanguage = "en"
+            selectedLanguageAPI = "\(1)"
         }
         updateBorders(for: selectedView)
+        
+        UserDefaults.standard.set(selectedLanguage, forKey: LanguageSet.languageSelected)
+        UserDefaults.standard.synchronize()
     }
     
     @IBAction func btnDoneTapped(_ sender: UIButton) {
@@ -109,7 +119,7 @@ class LanguageViewController: UIViewController {
         let defaultAvatar = "https://lolcards.link/api/public/images/AvatarDefault.png"
         let avatar = UserDefaults.standard.string(forKey: "avatarURL") ?? defaultAvatar
         
-        viewModel.registerUser(name: name!, avatar: avatar, username: username!, language: selectedLanguage ?? "\(1)") { [weak self] result in
+        viewModel.registerUser(name: name!, avatar: avatar, username: username!, language: selectedLanguageAPI ?? "\(1)") { [weak self] result in
             guard let self = self else { return }
             
             DispatchQueue.main.async {
@@ -119,9 +129,10 @@ class LanguageViewController: UIViewController {
                 switch result {
                 case .success(let profile):
                     print("Successfully registered: \(profile)")
+                    UserDefaults.standard.set(true, forKey: "isUserRegistered")
                     let vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(identifier: "CustomTabbarController") as! CustomTabbarController
                     self.navigationController?.pushViewController(vc, animated: true)
-
+                    
                 case .failure(let error):
                     print("Registration error: \(error.localizedDescription)")
                 }

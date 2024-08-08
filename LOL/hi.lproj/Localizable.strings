@@ -5,3 +5,25 @@
   Created by Arpit iOS Dev. on 05/08/24.
   
 */
+
+// Tab bar Item
+"TabbarItemKey01" = "घर";
+"TabbarItemKey02" = "इनबॉक्स";
+"TabbarItemKey03" = "फॉर्म स्क्रीन";
+"TabbarItemKey04" = "अधिक एप्लीकेशन";
+"TabbarItemKey05" = "सेटिंग्स";
+
+// Home View Controller
+"QuestionsKey01" = "क्या आप मुझे बेहतर जानते हैं?";
+"QuestionsKey02" = "आप मुझे कितनी अच्छी तरह जानते हैं?";
+"QuestionsKey03" = "मेरे बारे में जानना चाहते हो?";
+"QuestionsKey04" = "आप मुझे कितनी अच्छी तरह जानते हैं?";
+"QuestionsKey05" = "क्या आप मुझे बेहतर जानते हैं?";
+"QuestionsKey06" = "मेरे बारे में जानना चाहते हो?";
+"QuestionsKey07" = "आप मुझे कितनी अच्छी तरह जानते हैं?";
+
+// Edit View Controller
+"EditDescriptionKey" = "जब कोई अन्य व्यक्ति आपका लिंक खोले तो अपने बारे में जानने के लिए कार्ड से प्रश्न चुनें। आप अपना प्रश्न संपादित कर सकते हैं...";
+"EditNameKey" = "नाम";
+"EditSelectQuesKey" = "पाँच प्रश्न चुनें";
+"EditSaveCardBtnKey" = "कार्ड सहेजें";
