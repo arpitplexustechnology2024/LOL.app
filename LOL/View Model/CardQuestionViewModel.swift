@@ -10,13 +10,13 @@ import Foundation
 
 class CardQuestionViewModel {
     
-    private let apiService: ApiServiceProtocol
+    private let apiService: CardQuestionApiServiceProtocol
     
     var cardTitles: [String] = []
     var reloadData: (() -> Void)?
     var showError: ((String) -> Void)?
     
-    init(apiService: ApiServiceProtocol) {
+    init(apiService: CardQuestionApiServiceProtocol) {
         self.apiService = apiService
     }
     

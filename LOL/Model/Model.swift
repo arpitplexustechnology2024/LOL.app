@@ -47,5 +47,24 @@ struct DataClass: Codable {
     let name: String
     let avatar: String
     let username, isPurchase, link: String
+}
+
+// MARK: - SelectedCardTitle
+struct SelectedCardTitle: Codable {
+    let status: Int
+    let message: String
+    let data: Data
+}
+
+// MARK: - Data
+struct Data: Codable {
     let selectedCardTitle: [String]
+    let language: String
+}
+
+// MARK: - CardTitle
+struct CardTitle: Codable {
+    let status: Int
+    let message: String
+    let data: [String]
 }

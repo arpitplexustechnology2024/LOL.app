@@ -10,8 +10,9 @@ target 'LOL' do
   pod 'Alamofire'
   pod "TTGSnackbar"
   pod 'SDWebImage'
-  
-  
+  pod 'FirebaseAuth'
+  pod 'GoogleMLKit/FaceDetection'
+
   
   target 'LOLTests' do
     inherit! :search_paths

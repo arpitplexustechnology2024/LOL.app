@@ -8,12 +8,12 @@
 import Foundation
 import Alamofire
 
-protocol ApiServiceProtocol {
+protocol CardQuestionApiServiceProtocol {
     func fetchCardTitle(completion: @escaping (Result<SelectedCardTitle, Error>) -> Void)
 }
 
-class ApiService: ApiServiceProtocol {
-    static let shared = ApiService()
+class CardQuestionApiService: CardQuestionApiServiceProtocol {
+    static let shared = CardQuestionApiService()
     
     private init() {}
     

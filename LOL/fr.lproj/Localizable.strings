@@ -22,9 +22,20 @@
 "QuestionsKey06" = "Envie de me découvrir ?";
 "QuestionsKey07" = "Dans quelle mesure me connaissez-vous ?";
 
-
 // Edit View Controller
 "EditDescriptionKey" = "Sélectionnez les questions de la carte pour vous connaître lorsqu'une autre personne ouvre votre lien. vous pouvez modifier votre question...";
 "EditNameKey" = "Nom";
 "EditSelectQuesKey" = "Sélectionnez cinq questions";
 "EditSaveCardBtnKey" = "Enregistrer la carte";
+
+// Card Question
+"CardQuesKey" = "Question de carte";
+"CardDescriptionKey" = "Sélectionnez les questions de la carte pour vous connaître lorsqu'une autre personne ouvre votre lien. vous pouvez modifier votre question...";
+"FiveQuesKey" = "Cinq questions";
+"EditQuesBtnKey" = "Modifier la question";
+"ShareBtnKey" = "Partager!";
+
+// Share link View Controller
+"CopyLabelKey" = "Étape 1 : Copiez votre lien";
+"ShareLabelKey" = "Étape 2 : Partagez le lien sur votre story Instagram";
+"CopyBtnKey" = "Copier le lien";

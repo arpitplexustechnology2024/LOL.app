@@ -41,8 +41,6 @@ class ProfileCollectionViewCell: UICollectionViewCell {
     
     private func makeProfileImageViewCircular() {
         profile_ImageView.layer.cornerRadius = profile_ImageView.frame.size.width / 2
-        profile_ImageView.layer.borderWidth = 2
-        profile_ImageView.layer.borderColor = UIColor.white.cgColor
         profile_ImageView.layer.masksToBounds = true
     }
     

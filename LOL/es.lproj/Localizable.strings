@@ -22,9 +22,20 @@
 "QuestionsKey06" = "¿Quieres saber sobre mí?";
 "QuestionsKey07" = "¿Qué tan bien me conoces?";
 
-
 // Edit View Controller
 "EditDescriptionKey" = "Seleccione las preguntas de la tarjeta para saber sobre usted cuando otra persona abra su enlace. puedes editar tu pregunta...";
 "EditNameKey" = "Nombre";
 "EditSelectQuesKey" = "Seleccione cinco preguntas";
 "EditSaveCardBtnKey" = "Guardar tarjeta";
+
+// Card Question
+"CardQuesKey" = "Pregunta de tarjeta";
+"CardDescriptionKey" = "Seleccione las preguntas de la tarjeta para saber sobre usted cuando otra persona abra su enlace. puedes editar tu pregunta...";
+"FiveQuesKey" = "Cinco preguntas";
+"EditQuesBtnKey" = "Editar pregunta";
+"ShareBtnKey" = "¡Compartir!";
+
+// Share link View Controller
+"CopyLabelKey" = "Paso 1: Copia tu enlace";
+"ShareLabelKey" = "Paso 2: Comparte el enlace en tu historia de Instagram";
+"CopyBtnKey" = "Copiar enlace";

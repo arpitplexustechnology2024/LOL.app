@@ -27,3 +27,15 @@
 "EditNameKey" = "नाम";
 "EditSelectQuesKey" = "पाँच प्रश्न चुनें";
 "EditSaveCardBtnKey" = "कार्ड सहेजें";
+
+// Card Question
+"CardQuesKey" = "कार्ड प्रश्न";
+"CardDescriptionKey" = "जब कोई अन्य व्यक्ति आपका लिंक खोले तो अपने बारे में जानने के लिए कार्ड से प्रश्न चुनें। आप अपना प्रश्न संपादित कर सकते हैं...";
+"FiveQuesKey" = "पाँच प्रश्न";
+"EditQuesBtnKey" = "प्रश्न संपादित करें";
+"ShareBtnKey" = "शेयर करना!";
+
+// Share link View Controller
+"CopyLabelKey" = "कदम 1: अपना लिंक कॉपी करें";
+"ShareLabelKey" = "कदम 2: अपनी इंस्टाग्राम स्टोरी पर लिंक साझा करें";
+"CopyBtnKey" = "लिंक की प्रतिलिपि करें";

@@ -22,6 +22,18 @@
 "QuestionsKey06" = "Want to discover about me ?";
 "QuestionsKey07" = "How well do you know myself ?";
 
+// Card Question View Controller
+"CardQuesKey" = "Card Question";
+"CardDescriptionKey" = "Select the questions from the card to know about yourself when other person open your link. you can edit your question...";
+"FiveQuesKey" = "Five Question";
+"EditQuesBtnKey" = "Edit question";
+"ShareBtnKey" = "Share!";
+
+// Share link View Controller
+"CopyLabelKey" = "Step 1 : Copy your link";
+"ShareLabelKey" = "Step 2 : Share Link on your insagram story";
+"CopyBtnKey" = "Copy Link";
+
 // Edit View Controller
 "EditDescriptionKey" = "Select the questions from the card to know about yourself when other person open your link. you can edit your question... ";
 "EditNameKey" = "Name";
@@ -52,13 +64,6 @@
 "DeleteDescriptionKey" = "Once you delete this account after you can not restore account.";
 "CancelBtnKey" = "Cancel";
 "DeleteBtnKey" = "Delete";
-
-// Card Question
-"CardQuesKey" = "Card Question";
-"CardDescriptionKey" = "Select the questions from the card to know about yourself when other person open your link. you can edit your question...";
-"FiveQuesKey" = "Five Question";
-"EditQuesBtnKey" = "Edit question";
-"ShareBtnKey" = "Share!";
 
 // Premium View Controller
 "UnlockBtnKey" = "Unlock";

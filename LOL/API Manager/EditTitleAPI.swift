@@ -9,20 +9,20 @@ import Alamofire
 
 class APIService {
     
-    static let shared = APIService() // Singleton instance
+    static let shared = APIService()
     
-    private init() {} // Private initializer to ensure only one instance is created
+    private init() {}
     
-    // Function to fetch card titles
-    func fetchCardTitles(username: String, completion: @escaping (Result<CardTitle, Error>) -> Void) {
+    func fetchCardTitles(username: String, completion: @escaping (Result<[String], Error>) -> Void) {
+        let url = "https://lolcards.link/api/cardTitle"
         let parameters: [String: String] = ["username": username]
         
-        AF.request("https://lolcards.link/api/findTitle", method: .post, parameters: parameters)
+        AF.request(url, method: .post, parameters: parameters, encoding: URLEncoding.default)
             .validate()
             .responseDecodable(of: CardTitle.self) { response in
                 switch response.result {
-                case .success(let cardTitle):
-                    completion(.success(cardTitle))
+                case .success(let cardTitleResponse):
+                    completion(.success(cardTitleResponse.data))
                 case .failure(let error):
                     completion(.failure(error))
                 }

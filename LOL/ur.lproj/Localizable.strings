@@ -22,9 +22,20 @@
 "QuestionsKey06" = "میرے بارے میں دریافت کرنا چاہتے ہیں؟";
 "QuestionsKey07" = "آپ خود کو کتنی اچھی طرح جانتے ہیں؟";
 
-
 // Edit View Controller
 "EditDescriptionKey" = "جب کوئی دوسرا شخص آپ کا لنک کھولتا ہے تو اپنے بارے میں جاننے کے لیے کارڈ سے سوالات کا انتخاب کریں۔ آپ اپنے سوال میں ترمیم کر سکتے ہیں...";
 "EditNameKey" = "نام";
 "EditSelectQuesKey" = "پانچ سوال منتخب کریں۔";
 "EditSaveCardBtnKey" = "کارڈ محفوظ کریں۔";
+
+// Card Question
+"CardQuesKey" = "کارڈ کا سوال";
+"CardDescriptionKey" = "جب کوئی دوسرا شخص آپ کا لنک کھولتا ہے تو اپنے بارے میں جاننے کے لیے کارڈ سے سوالات کا انتخاب کریں۔ آپ اپنے سوال میں ترمیم کر سکتے ہیں...";
+"FiveQuesKey" = "پانچ سوال";
+"EditQuesBtnKey" = "سوال میں ترمیم کریں۔";
+"ShareBtnKey" = "بانٹیں!";
+
+// Share link View Controller
+"CopyLabelKey" = "مرحلہ 1: اپنا لنک کاپی کریں۔";
+"ShareLabelKey" = "مرحلہ 2: اپنی انساگرام کہانی پر لنک شیئر کریں۔";
+"CopyBtnKey" = "لنک کاپی کریں۔";

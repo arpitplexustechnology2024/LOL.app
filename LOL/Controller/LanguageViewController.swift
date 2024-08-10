@@ -35,6 +35,7 @@ class LanguageViewController: UIViewController {
         adjustImageViewForDevice()
         setupLanguageViews()
         setupUI()
+        
     }
     
     func setupUI() {
@@ -130,6 +131,7 @@ class LanguageViewController: UIViewController {
                 case .success(let profile):
                     print("Successfully registered: \(profile)")
                     UserDefaults.standard.set(true, forKey: "isUserRegistered")
+                    UserDefaults.standard.set(profile.data.link, forKey: "isUserLink")
                     let vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(identifier: "CustomTabbarController") as! CustomTabbarController
                     self.navigationController?.pushViewController(vc, animated: true)
                     

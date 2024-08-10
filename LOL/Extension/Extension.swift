@@ -40,7 +40,6 @@ extension UIViewController {
     }
 }
 
-// Extension to detect tap on attributed text
 extension UITapGestureRecognizer {
     func didTapAttributedTextInLabel(label: UILabel, inRange targetRange: NSRange) -> Bool {
         guard let attributedText = label.attributedText else { return false }
@@ -80,25 +79,38 @@ extension UITapGestureRecognizer {
 
 
 extension UIButton {
+    func setGradientBorder(colors: [UIColor], borderWidth: CGFloat) {
+            layer.sublayers?.removeAll { $0 is CAGradientLayer }
+
+            let gradientLayer = CAGradientLayer()
+            gradientLayer.colors = colors.map { $0.cgColor }
+            gradientLayer.frame = bounds
+            gradientLayer.startPoint = CGPoint(x: 0, y: 0)
+            gradientLayer.endPoint = CGPoint(x: 1, y: 1)
+            let shapeLayer = CAShapeLayer()
+            shapeLayer.lineWidth = borderWidth
+            shapeLayer.strokeColor = UIColor.clear.cgColor
+            shapeLayer.fillColor = UIColor.clear.cgColor
+            
+            let path = UIBezierPath(rect: bounds.insetBy(dx: borderWidth / 2, dy: borderWidth / 2))
+            shapeLayer.path = path.cgPath
+            gradientLayer.mask = shapeLayer
+            layer.addSublayer(gradientLayer)
+        }
     
-    func applyGradientBorder(colors: [CGColor], lineWidth: CGFloat) {
-        layer.sublayers?.removeAll { $0 is CAGradientLayer }
+    func applyGradient(colors: [UIColor], startPoint: CGPoint = CGPoint(x: 0, y: 0.5), endPoint: CGPoint = CGPoint(x: 1, y: 0.5)) {
+        layer.sublayers?.filter { $0 is CAGradientLayer }.forEach { $0.removeFromSuperlayer() }
         
         let gradientLayer = CAGradientLayer()
-        gradientLayer.colors = colors
-        gradientLayer.startPoint = CGPoint(x: 0, y: 0.5)
-        gradientLayer.endPoint = CGPoint(x: 1, y: 0.5)
+        gradientLayer.colors = colors.map { $0.cgColor }
+        gradientLayer.startPoint = startPoint
+        gradientLayer.endPoint = endPoint
         gradientLayer.frame = bounds
+        gradientLayer.cornerRadius = bounds.height / 2
+        gradientLayer.masksToBounds = true
         
-        let shapeLayer = CAShapeLayer()
-        shapeLayer.path = UIBezierPath(roundedRect: bounds, cornerRadius: layer.cornerRadius).cgPath
-        shapeLayer.lineWidth = lineWidth
-        shapeLayer.fillColor = UIColor.clear.cgColor
-        shapeLayer.strokeColor = UIColor.black.cgColor
-        
-        gradientLayer.mask = shapeLayer
-        
-        layer.addSublayer(gradientLayer)
+        layer.insertSublayer(gradientLayer, at: 0)
+        layer.masksToBounds = true
     }
 }
 
@@ -110,3 +122,4 @@ extension String {
         return NSLocalizedString(self, tableName: nil, bundle: bundle!, value: "", comment: "")
     }
 }
+

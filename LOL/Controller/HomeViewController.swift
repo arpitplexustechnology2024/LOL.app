@@ -8,6 +8,9 @@
 import UIKit
 import AVFoundation
 import Photos
+import TTGSnackbar
+import MLKitVision
+import MLKitFaceDetection
 import SDWebImage
 
 class HomeViewController: UIViewController {
@@ -49,7 +52,7 @@ class HomeViewController: UIViewController {
         }
         
         let avatarAction = UIAlertAction(title: "Select Avatar", style: .default) { _ in
-            self.btnAvtarTapped()
+            self.btnAvatarTapped()
         }
         
         let cancelAction = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
@@ -131,7 +134,7 @@ class HomeViewController: UIViewController {
         }
     }
     
-    func btnAvtarTapped() {
+    func btnAvatarTapped() {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         let bottomSheetVC = storyboard.instantiateViewController(withIdentifier: "AvtarBottomViewController") as! AvtarBottomViewController
         
@@ -149,7 +152,6 @@ class HomeViewController: UIViewController {
                 sheet.prefersGrabberVisible = true
             }
         }
-        
         present(bottomSheetVC, animated: true, completion: nil)
     }
     
@@ -163,12 +165,51 @@ class HomeViewController: UIViewController {
             }
         }
     }
+    
+    func detectFaces(in image: UIImage) {
+        let visionImage = VisionImage(image: image)
+        visionImage.orientation = image.imageOrientation
+        
+        let options = FaceDetectorOptions()
+        options.performanceMode = .accurate
+        options.landmarkMode = .all
+        options.contourMode = .none
+        options.classificationMode = .all
+        
+        let faceDetector = FaceDetector.faceDetector(options: options)
+        
+        faceDetector.process(visionImage) { faces, error in
+            if let error = error {
+                print("Error detecting faces: \(error.localizedDescription)")
+                return
+            }
+            
+            if let faces = faces {
+                self.handleDetectedFaces(faces: faces, in: image)
+            }
+        }
+    }
+    
+    func handleDetectedFaces(faces: [Face], in image: UIImage) {
+        if faces.isEmpty {
+            self.showSnackbar(message: "No faces detected. Please try another image.")
+        } else {
+            if let firstFace = faces.first {
+                saveAndDisplayImage(image: image)
+            }
+        }
+    }
+    
+    func showSnackbar(message: String) {
+        let snackbar = TTGSnackbar(message: message, duration: .long)
+        snackbar.show()
+    }
 }
 
 extension HomeViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey: Any]) {
         if let pickedImage = info[.editedImage] as? UIImage ?? info[.originalImage] as? UIImage {
-            saveAndDisplayImage(image: pickedImage)
+            detectFaces(in: pickedImage)
         }
         picker.dismiss(animated: true, completion: nil)
     }
@@ -186,7 +227,6 @@ extension HomeViewController: UIImagePickerControllerDelegate, UINavigationContr
 }
 
 extension HomeViewController: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
-    
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return cardBGImageArr.count
     }
@@ -205,13 +245,15 @@ extension HomeViewController: UICollectionViewDelegate, UICollectionViewDataSour
                 cell.profile_ImageView.sd_setImage(with: avatarURL, placeholderImage: UIImage(named: "placeholder"))
             }
         }
-        
-        cell.profile_ChangeButton.tag = indexPath.item
+        cell.profile_ChangeButton.tag = indexPath.row
         cell.profile_ChangeButton.addTarget(self, action: #selector(profileChangeButton(_:)), for: .touchUpInside)
+        
         return cell
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(identifier: "CardQuestionViewController") as! CardQuestionViewController
+        self.navigationController?.pushViewController(vc, animated: true)
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
